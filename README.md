@@ -135,5 +135,9 @@ Details + How-to: **[`docs/datenbank.md`](docs/datenbank.md)**.
 - API-Keys gehören nur in `.mcp.json` (lokal) bzw. n8n-Credentials.
 
 ## 📄 Lizenz & Dank
-MIT (siehe `LICENSE`). Die n8n-Kern-Skills und der n8n-MCP-Server stammen von
-[Romuald Członkowski / czlonkowski](https://github.com/czlonkowski) — Details in `ATTRIBUTION.md`.
+MIT (siehe `LICENSE`).
+
+- Die Grundlage/Idee stammt von **[snipKI – hackathon-week](https://github.com/snip-ki/hackathon-week/)**. Danke!
+- Die n8n-Kern-Skills und der n8n-MCP-Server stammen von [Romuald Członkowski / czlonkowski](https://github.com/czlonkowski).
+
+Details in `ATTRIBUTION.md`.

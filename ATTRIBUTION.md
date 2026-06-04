@@ -2,6 +2,9 @@
 
 Dieses Starter-Repo nutzt und bündelt Arbeit von Romuald Członkowski (n8n-mcp / n8n-skills). Vielen Dank!
 
+## Grundlage / Inspiration
+- Die Idee und Grundlage dieses Hackathon-Starters stammt von **snipKI – hackathon-week**: https://github.com/snip-ki/hackathon-week/
+
 ## n8n-mcp (MCP-Server)
 - Quelle: https://github.com/czlonkowski/n8n-mcp
 - Wird zur Laufzeit via `npx -y n8n-mcp` geladen (nicht in diesem Repo enthalten).
