@@ -16,6 +16,19 @@
     },
     {
       "parameters": {
+        "content": "## Trigger-Arten — womit ein Workflow startet\n\n- **Manuell** — per Klick (zum Testen).\n- **Schedule** — zeitgesteuert (stündlich, täglich …).\n- **Webhook** — wenn ein HTTP-Aufruf reinkommt. Daten unter `{{ $json.body }}`.\n- **Form** — n8n zeigt ein Formular; Absenden startet den Flow.\n- **Chat** — Chat-Fenster; jede Nachricht startet den Flow (siehe `ai-agent-grundlagen.json`).\n- **App-Trigger** — z.B. neue Gmail-/Telegram-/Slack-Nachricht.\n- **Execute Workflow** — von einem anderen Workflow aufgerufen.\n- **Error Trigger** — startet, wenn ein Workflow fehlschlägt.",
+        "height": 300,
+        "width": 380,
+        "color": 6
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000a9",
+      "name": "Doku: Trigger-Arten",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [540, -360]
+    },
+    {
+      "parameters": {
         "content": "## 1) Trigger\nStartet den Workflow. Hier: **manuell** per Klick auf „Test workflow\".",
         "height": 120,
         "width": 200,

@@ -1,0 +1,149 @@
+{
+  "name": "KI-Agent Grundlagen (Lern-Workflow)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## KI-Agent in n8n\n\nEin **KI-Agent** bekommt eine Nachricht (vom **Chat Trigger**), denkt mit einem **Sprachmodell** (LLM), merkt sich den Verlauf über **Memory** und kann **Tools** benutzen (rechnen, im Web suchen, APIs aufrufen …).\n\n⚠️ Die farbigen Linien **unten** (`ai_languageModel`, `ai_memory`, `ai_tool`) sind **keine** normalen Datenflüsse, sondern **Fähigkeiten**, die du an den Agent ansteckst.\n\nℹ️ Das Sprachmodell braucht eine **Anthropic-Credential** (deinen API-Key).",
+        "height": 280,
+        "width": 560,
+        "color": 4
+      },
+      "id": "a1000000-0000-4000-8000-000000000001",
+      "name": "Doku: Überblick",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-80, -330]
+    },
+    {
+      "parameters": {
+        "content": "## Chat Trigger\nÖffnet ein Chat-Fenster und startet den Agent bei **jeder Nachricht**. (Eine von vielen Trigger-Arten — siehe `n8n-grundlagen.json`.)",
+        "height": 120,
+        "width": 220,
+        "color": 5
+      },
+      "id": "a1000000-0000-4000-8000-000000000002",
+      "name": "Doku: Trigger",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [20, -160]
+    },
+    {
+      "parameters": {
+        "content": "## KI-Agent\nDas „Gehirn\": versteht die Anfrage, entscheidet ob ein **Tool** nötig ist, und formuliert die Antwort.",
+        "height": 120,
+        "width": 240,
+        "color": 6
+      },
+      "id": "a1000000-0000-4000-8000-000000000003",
+      "name": "Doku: Agent",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [300, -160]
+    },
+    {
+      "parameters": {
+        "content": "**Sprachmodell (Claude)**\nDas eigentliche LLM — das „Denken\". Braucht eine **Anthropic-Credential**.",
+        "height": 100,
+        "width": 200,
+        "color": 7
+      },
+      "id": "a1000000-0000-4000-8000-000000000004",
+      "name": "Doku: Modell",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [120, 150]
+    },
+    {
+      "parameters": {
+        "content": "**Memory**\nMerkt sich den Gesprächsverlauf, damit der Agent Kontext hat.",
+        "height": 100,
+        "width": 200,
+        "color": 7
+      },
+      "id": "a1000000-0000-4000-8000-000000000005",
+      "name": "Doku: Memory",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [340, 150]
+    },
+    {
+      "parameters": {
+        "content": "**Tool (Rechner)**\nEine Fähigkeit für den Agent. Es gibt viele Tools (HTTP, Suche, eigene Workflows …). **Fast jeder Node kann ein Tool sein.**",
+        "height": 100,
+        "width": 220,
+        "color": 7
+      },
+      "id": "a1000000-0000-4000-8000-000000000006",
+      "name": "Doku: Tool",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [560, 150]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "a1000000-0000-4000-8000-0000000000b1",
+      "name": "Chat-Nachricht (Trigger)",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [80, 0]
+    },
+    {
+      "parameters": {
+        "promptType": "auto",
+        "options": {
+          "systemMessage": "Du bist ein hilfreicher Assistent für ein Hackathon-Team. Antworte freundlich und kurz auf Deutsch. Für Rechenaufgaben benutze den Rechner."
+        }
+      },
+      "id": "a1000000-0000-4000-8000-0000000000b2",
+      "name": "KI-Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [360, 0]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "a1000000-0000-4000-8000-0000000000b3",
+      "name": "Sprachmodell (Claude)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.5,
+      "position": [180, 280]
+    },
+    {
+      "parameters": {},
+      "id": "a1000000-0000-4000-8000-0000000000b4",
+      "name": "Gedächtnis (Memory)",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [400, 280]
+    },
+    {
+      "parameters": {},
+      "id": "a1000000-0000-4000-8000-0000000000b5",
+      "name": "Rechner (Tool)",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [620, 280]
+    }
+  ],
+  "connections": {
+    "Chat-Nachricht (Trigger)": {
+      "main": [[{ "node": "KI-Agent", "type": "main", "index": 0 }]]
+    },
+    "Sprachmodell (Claude)": {
+      "ai_languageModel": [[{ "node": "KI-Agent", "type": "ai_languageModel", "index": 0 }]]
+    },
+    "Gedächtnis (Memory)": {
+      "ai_memory": [[{ "node": "KI-Agent", "type": "ai_memory", "index": 0 }]]
+    },
+    "Rechner (Tool)": {
+      "ai_tool": [[{ "node": "KI-Agent", "type": "ai_tool", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
