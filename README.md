@@ -137,7 +137,8 @@ Details + How-to: **[`docs/datenbank.md`](docs/datenbank.md)**.
 ## 📄 Lizenz & Dank
 MIT (siehe `LICENSE`).
 
-- Die Grundlage/Idee stammt von **[snipKI – hackathon-week](https://github.com/snip-ki/hackathon-week/)**. Danke!
-- Die n8n-Kern-Skills und der n8n-MCP-Server stammen von [Romuald Członkowski / czlonkowski](https://github.com/czlonkowski).
+Mit großem Dank an:
+- **[Romuald Członkowski / czlonkowski](https://github.com/czlonkowski)** — die gebündelten n8n-Kern-Skills und der **n8n-MCP-Server**, auf dem das Ganze läuft.
+- **[snipKI – hackathon-week](https://github.com/snip-ki/hackathon-week/)** — Grundlage und Idee dieses Hackathon-Starters.
 
 Details in `ATTRIBUTION.md`.
