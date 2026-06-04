@@ -68,7 +68,7 @@
     },
     {
       "parameters": {
-        "content": "## HTTP-Request-Tool\nRuft den `hello-webhook` per HTTP auf. Den **Namen** füllt der Agent selbst aus (`{name}`).\n⚠️ Trage hier die **Production-URL** deines hello-webhook ein, z.B. `https://DEINE-INSTANZ.app.n8n.cloud/webhook/hello`.",
+        "content": "## HTTP-Request-Tool\nRuft den `hello-webhook` per HTTP auf. Den **Namen** füllt der Agent selbst aus (via `$fromAI`).\n⚠️ Trage hier die **Production-URL** deines hello-webhook ein, z.B. `https://DEINE-INSTANZ.app.n8n.cloud/webhook/hello`.",
         "height": 150,
         "width": 280,
         "color": 2
@@ -126,22 +126,22 @@
         "method": "POST",
         "url": "https://DEINE-INSTANZ.app.n8n.cloud/webhook/hello",
         "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "{\n  \"name\": \"{name}\"\n}",
-        "placeholderDefinitions": {
-          "values": [
+        "contentType": "json",
+        "specifyBody": "keypair",
+        "bodyParameters": {
+          "parameters": [
             {
               "name": "name",
-              "description": "Der Name der Person, die begrüßt werden soll",
-              "type": "string"
+              "value": "={{ $fromAI('name', 'Der Name der Person, die begrüßt werden soll', 'string') }}"
             }
           ]
-        }
+        },
+        "options": {}
       },
       "id": "ec100000-0000-4000-8000-0000000000b5",
       "name": "hello_webhook_aufrufen",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "typeVersion": 1.1,
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
       "position": [560, 280]
     }
   ],

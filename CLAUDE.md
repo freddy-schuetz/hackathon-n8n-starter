@@ -68,6 +68,8 @@ Für LangChain/AI-Nodes `sourceOutput` nutzen: `ai_languageModel`, `ai_tool`, `a
 
 ⚠️ **AI-Sub-Nodes haben kein „Execute":** Tool-/Modell-/Memory-Nodes laufen **nur, wenn der Agent sie aufruft**. Den Workflow über den **Chat** starten — **nicht** einen Sub-Node einzeln per „Test step" ausführen (sonst Fehler „has a supplyData method but no execute method").
 
+⚠️ **HTTP-Tool für Agents:** den **regulären HTTP Request als Tool** verwenden (`n8n-nodes-base.httpRequestTool`, v4.x) mit `$fromAI('feld','Beschreibung','string')` für vom LLM gefüllte Werte — **nicht** den Legacy-Node `@n8n/n8n-nodes-langchain.toolHttpRequest` (v1.1, deprecated). Allgemein gilt: fast jeder Standard-Node kann als Tool an den Agent gehängt werden.
+
 ## Best Practices
 
 ### Do
