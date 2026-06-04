@@ -170,9 +170,9 @@ Details + How-to: **[`docs/datenbank.md`](docs/datenbank.md)**.
 - API-Keys gehören nur in `.mcp.json` (lokal) bzw. n8n-Credentials.
 
 ## 👤 Gebaut von
-**Friedemann Schütz** — KI-Automatisierung mit **n8n** (Freelancer · n8n Ambassador, Essen). Beratung · Umsetzung · Workshops & Schulungen.
+**Friedemann Schütz** — **(KI-)Automatisierung, KI-Agenten, Frontends, Infrastruktur, Datenmanagement & Prozessoptimierung** (n8n Ambassador, Essen). Beratung · Umsetzung · Workshops & Schulungen.
 
-Für den Hackathon reicht die **Cloud**. Für **Unternehmen** setze ich Automatisierungen **self-hosted & DSGVO-konform** und produktionsreif um — kostenloser Einstieg per **KI-Check**.
+Für den Hackathon reicht die **Cloud**. Für **Unternehmen** setze ich Lösungen **self-hosted & DSGVO-konform** und produktionsreif um — kostenloser Einstieg per **KI-Check**.
 → **[friedemann-schuetz.de](https://friedemann-schuetz.de)** · [LinkedIn](https://www.linkedin.com/in/friedemann-schuetz)
 
 ## 📄 Lizenz & Dank
