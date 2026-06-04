@@ -50,6 +50,8 @@ Claude erledigt den Rest (klonen, konfigurieren) und fragt dich nur nach deinem 
 3. In n8n: **Settings → n8n API → Create API Key** → Key kopieren.
 4. URL + Key Claude geben (oder selbst in `.mcp.json` eintragen).
 
+> 🏠 **Lieber selbst hosten?** Statt der Cloud-Trial kannst du auch ein **selbst gehostetes n8n** nutzen — trag einfach dessen URL + API-Key ein (sag's Claude, der Rest ist identisch). Für den schnellen Einstieg ist die Cloud-Trial am einfachsten; **self-hosted** ist datenschutzfreundlich (DSGVO) und der übliche Weg für den **produktiven** Betrieb.
+
 ---
 
 ## 🛠️ Manuelles Setup (statt der 1-Satz-Variante)
@@ -166,6 +168,12 @@ Details + How-to: **[`docs/datenbank.md`](docs/datenbank.md)**.
 ## ⚠️ Sicherheit
 - **Niemals** API-Keys (n8n, Anthropic) ins Repo committen. `.mcp.json` und `.env*` sind in `.gitignore`.
 - API-Keys gehören nur in `.mcp.json` (lokal) bzw. n8n-Credentials.
+
+## 👤 Gebaut von
+**Friedemann Schütz** — KI-Automatisierung mit **n8n** (Freelancer · n8n Ambassador, Essen). Beratung · Umsetzung · Workshops & Schulungen.
+
+Für den Hackathon reicht die **Cloud**. Für **Unternehmen** setze ich Automatisierungen **self-hosted & DSGVO-konform** und produktionsreif um — kostenloser Einstieg per **KI-Check**.
+→ **[friedemann-schuetz.de](https://friedemann-schuetz.de)** · [LinkedIn](https://www.linkedin.com/in/friedemann-schuetz)
 
 ## 📄 Lizenz & Dank
 MIT (siehe `LICENSE`).
