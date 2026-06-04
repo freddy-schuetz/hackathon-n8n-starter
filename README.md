@@ -13,6 +13,8 @@ Eine fertige Grundlage, um beim Hackathon mit **Claude Code** und **n8n** sofort
 Claude erledigt den Rest (klonen, konfigurieren) und fragt dich nur nach deinem n8n-Zugang. Danach kannst du direkt Workflows bauen lassen.
 
 > Du brauchst vorher nur: **Claude Code Desktop** (eingeloggt mit deinem Claude-Account), **Node.js ≥ 20** und **git**.
+>
+> 🧩 **Du nutzt Codex, OpenCode o.ä. statt Claude Code?** → Setup-Anleitung in **[AGENTS.md](AGENTS.md)**.
 
 ---
 

@@ -1,0 +1,15 @@
+# Codex MCP-Konfig für n8n-mcp.
+# Kopieren nach ~/.codex/config.toml (global) ODER als .codex/config.toml im Projekt
+# (Projekt-Scope funktioniert nur bei "trusted projects").
+# ⚠️ Die echte Datei NICHT committen (enthält deinen API-Key) — ist in .gitignore.
+
+[mcp_servers.n8n-mcp]
+command = "npx"
+args = ["-y", "n8n-mcp"]
+
+[mcp_servers.n8n-mcp.env]
+N8N_API_URL = "https://DEINE-INSTANZ.app.n8n.cloud"
+N8N_API_KEY = "DEIN_N8N_API_KEY"
+MCP_MODE = "stdio"
+LOG_LEVEL = "error"
+DISABLE_CONSOLE_OUTPUT = "true"
