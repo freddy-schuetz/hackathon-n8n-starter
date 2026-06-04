@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## KI-Agent in n8n\n\nEin **KI-Agent** bekommt eine Nachricht (vom **Chat Trigger**), denkt mit einem **Sprachmodell** (LLM), merkt sich den Verlauf über **Memory** und kann **Tools** benutzen (rechnen, im Web suchen, APIs aufrufen …).\n\n⚠️ Die farbigen Linien **unten** (`ai_languageModel`, `ai_memory`, `ai_tool`) sind **keine** normalen Datenflüsse, sondern **Fähigkeiten**, die du an den Agent ansteckst.\n\nℹ️ Das Sprachmodell braucht eine **Anthropic-Credential** (deinen API-Key).",
+        "content": "## KI-Agent in n8n\n\nEin **KI-Agent** bekommt eine Nachricht (vom **Chat Trigger**), denkt mit einem **Sprachmodell** (LLM), merkt sich den Verlauf über **Memory** und kann **Tools** benutzen (rechnen, im Web suchen, APIs aufrufen …).\n\n⚠️ Die farbigen Linien **unten** (`ai_languageModel`, `ai_memory`, `ai_tool`) sind **keine** normalen Datenflüsse, sondern **Fähigkeiten**, die du an den Agent ansteckst.\n\nℹ️ Das Sprachmodell braucht eine **Anthropic-Credential** (deinen API-Key).\n\n▶️ **Testen:** über den **Chat** starten — Sub-Nodes (Modell/Memory/Tool) laufen nur über den Agent, nicht einzeln per „Test step\".",
         "height": 280,
         "width": 560,
         "color": 4

@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## KI-Agent mit echtem Tool (ruft den hello-webhook)\n\nDer Agent kann ein **HTTP-Request-Tool** benutzen, um **live eine API aufzurufen** — hier den **`hello-webhook`** aus diesem Repo (`examples/workflows/hello-webhook.json`).\n\n💬 Sag im Chat z.B. *„Begrüße bitte Max\"* — der Agent ruft das Tool mit `name=Max` auf und gibt die Antwort des Webhooks zurück.\n\n**Voraussetzung:** Der `hello-webhook`-Workflow ist importiert **und aktiv**; trage seine Webhook-URL im Tool-Node ein. (Jede andere API funktioniert genauso!)",
+        "content": "## KI-Agent mit echtem Tool (ruft den hello-webhook)\n\nDer Agent kann ein **HTTP-Request-Tool** benutzen, um **live eine API aufzurufen** — hier den **`hello-webhook`** aus diesem Repo (`examples/workflows/hello-webhook.json`).\n\n💬 Sag im Chat z.B. *„Begrüße bitte Max\"* — der Agent ruft das Tool mit `name=Max` auf und gibt die Antwort des Webhooks zurück.\n\n**Voraussetzung:** Der `hello-webhook`-Workflow ist importiert **und aktiv**; trage seine Webhook-URL im Tool-Node ein. (Jede andere API funktioniert genauso!)\n\n▶️ **Testen:** oben auf **Chat** klicken und eine Nachricht schicken — **nicht** den Tool-Node einzeln per „Test step\" ausführen (Tools laufen nur über den Agent).",
         "height": 290,
         "width": 620,
         "color": 4

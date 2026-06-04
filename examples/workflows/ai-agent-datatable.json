@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## Chat → KI-Agent → in Tabelle speichern\n\nPraxisnah: Der **Chat-Agent** beantwortet eine Frage, und Frage + Antwort werden **dauerhaft in einer n8n Data Table** gespeichert.\n\nSo baust du z.B. ein einfaches FAQ-/Protokoll-System — **ohne externe Datenbank** (Data Tables sind in n8n eingebaut).",
+        "content": "## Chat → KI-Agent → in Tabelle speichern\n\nPraxisnah: Der **Chat-Agent** beantwortet eine Frage, und Frage + Antwort werden **dauerhaft in einer n8n Data Table** gespeichert.\n\nSo baust du z.B. ein einfaches FAQ-/Protokoll-System — **ohne externe Datenbank** (Data Tables sind in n8n eingebaut).\n\n▶️ **Testen:** über den **Chat** starten (Sub-Nodes laufen nur über den Agent).",
         "height": 240,
         "width": 560,
         "color": 4

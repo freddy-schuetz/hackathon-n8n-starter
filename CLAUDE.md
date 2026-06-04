@@ -66,6 +66,8 @@ Für LangChain/AI-Nodes `sourceOutput` nutzen: `ai_languageModel`, `ai_tool`, `a
 
 ⚠️ **AI-Tool-Node-Namen:** Der Name eines als Tool verbundenen Nodes (`ai_tool`) wird zum **Funktionsnamen fürs LLM** — daher **nur Buchstaben, Ziffern und Unterstriche** (kein Leerzeichen/Bindestrich/Klammer/Umlaut, nicht mit Ziffer beginnen). Beispiel: `hello_webhook_aufrufen`, nicht „hello-webhook aufrufen".
 
+⚠️ **AI-Sub-Nodes haben kein „Execute":** Tool-/Modell-/Memory-Nodes laufen **nur, wenn der Agent sie aufruft**. Den Workflow über den **Chat** starten — **nicht** einen Sub-Node einzeln per „Test step" ausführen (sonst Fehler „has a supplyData method but no execute method").
+
 ## Best Practices
 
 ### Do
