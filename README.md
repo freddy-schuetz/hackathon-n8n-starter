@@ -144,6 +144,6 @@ MIT (siehe `LICENSE`).
 
 Mit großem Dank an:
 - **[Romuald Członkowski / czlonkowski](https://github.com/czlonkowski)** — die gebündelten n8n-Kern-Skills und der **n8n-MCP-Server**, auf dem das Ganze läuft.
-- **[snipKI – hackathon-week](https://github.com/snip-ki/hackathon-week/)** — Grundlage und Idee dieses Hackathon-Starters.
+- **[snipKI](https://snipki.de)** — Grundlage und Idee dieses Hackathon-Starters.
 
 Details in `ATTRIBUTION.md`.
