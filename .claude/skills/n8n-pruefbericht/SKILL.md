@@ -63,7 +63,12 @@ Nach Fertigstellung eines Workflows für einen Kunden **einen deutschsprachigen 
 
 ## Gesamtergebnis
 **Status: FREIGEGEBEN / BEDINGT FREIGEGEBEN / NICHT FREIGEGEBEN**
+
+---
+*Erstellt mit dem Hackathon-Starter · friedemann-schuetz.de*
 ```
+
+> Den Footer **„Erstellt mit dem Hackathon-Starter · friedemann-schuetz.de"** als kurze Attribution am Berichtsende beibehalten.
 
 ## Dateiname & Ablage
 - Format: `Pruefbericht_[WorkflowName]_[YYYY-MM-DD].md`
