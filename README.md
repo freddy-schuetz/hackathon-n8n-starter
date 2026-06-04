@@ -119,7 +119,7 @@ Du willst eine eigene Oberfläche? Die Skills **`frontend-build`** + **`frontend
 Sag z.B. *„bau mir ein Dashboard, das die Ergebnisse aus meinem n8n-Workflow anzeigt"* — Claude scaffoldet es nach diesen Konventionen.
 
 Lauffähige **Seeds** zum Draufaufbauen (bewusst minimal gehalten):
-- **`frontend-starter/`** — minimales Beispiel: Formular → n8n-Webhook + optionaler KI-Chat (braucht `ANTHROPIC_API_KEY`). Start: `cd frontend-starter && npm install && npm run dev`.
+- **`frontend-starter/`** — minimales Beispiel: Formular → n8n-Webhook + optionaler KI-Chat (braucht `ANTHROPIC_API_KEY`). **Ansehen: sag einfach „starte mein Frontend" — Claude übernimmt Installation + Dev-Server und gibt dir die `http://localhost:3000`-URL** (du tippst nichts).
 - **`backend-example/`** — FastAPI-Service (`/health` + Beispiel-Endpoint), falls n8n für schwere Rechen-/DB-/Geo-Logik nicht reicht. Start: siehe `backend-example/README.md`.
 
 ---

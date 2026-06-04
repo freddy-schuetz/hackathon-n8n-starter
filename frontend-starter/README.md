@@ -3,6 +3,9 @@
 Minimaler, lauffähiger Starter für Hackathon-Frontends.
 
 ## Start
+**Am einfachsten:** sag Claude *„starte mein Frontend"* — es übernimmt `npm install`, startet den Dev-Server (im Hintergrund) und gibt dir die **`http://localhost:3000`**-URL. Du musst nichts tippen.
+
+Manuell geht natürlich auch:
 ```bash
 npm install
 cp .env.local.example .env.local   # NEXT_PUBLIC_N8N_BASE eintragen

@@ -10,6 +10,7 @@ Eine fertige Grundlage, um mit **Claude Code + n8n-mcp** Automatisierungs-Workfl
 - **Sei proaktiv:** Führe den Standard-Prozess **selbstständig** durch — frag den User nicht für jeden Schritt um Erlaubnis.
 - **Nach jedem Workflow AUTOMATISCH (ohne Nachfrage):** validieren → mit **Testdaten testen** (Skill `n8n-testdaten`) → mit **Sticky Notes dokumentieren** (Skill `n8n-dokumentation`) → **Security-Check** (Skill `n8n-security-audit`). Ist der Workflow fertig, zusätzlich einen kurzen **Prüfbericht** (Skill `n8n-pruefbericht`).
 - **Silent Execution:** Werkzeuge ohne Zwischenkommentar ausführen, danach **kurz und verständlich** berichten, was gebaut/getestet/dokumentiert wurde.
+- **Frontend/App zeigen = DU startest sie (nicht der User):** Will der User seine App ansehen/testen, übernimm das **selbst** — falls nötig `npm install`, dann `npm run dev` **im Hintergrund** starten (blockiert nicht), und ihm die **`http://localhost:3000`**-URL geben bzw. die Vorschau/den Browser öffnen. Den User **keine Befehle tippen lassen**. Läuft der Server schon, einfach die URL nennen.
 
 ## Workflow-Erstellung: Standard-Prozess
 Diesen Ablauf führst du **automatisch** durch (Schritte 6–9 + 11 ohne Extra-Aufforderung):
