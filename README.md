@@ -84,7 +84,7 @@ Skills sind Spickzettel, die Claude **von selbst** heranzieht, sobald sie zum Th
 |------|-----------|
 | `CLAUDE.md` | Die Spielregeln für Claude (lädt automatisch) — sorgt dafür, dass Workflows korrekt gebaut, getestet **und automatisch dokumentiert** werden. |
 | `.mcp.json.example` | Vorlage für die Verbindung zu deinem n8n (du trägst URL + Key ein). |
-| `examples/workflows/` | Importierbare Lern-Beispiele (alle mit Sticky-Notes-Erklärung): **`n8n-grundlagen.json`** (Grundlogik, Trigger-Arten & wichtigste Bausteine), **`ai-agent-grundlagen.json`** (KI-Agent mit Sprachmodell, Memory & Tool), **`ai-agent-datatable.json`** (KI-Agent → Antwort in eine n8n Data Table speichern), **`hello-webhook.json`** (Mini-Workflow). |
+| `examples/workflows/` | Importierbare Lern-Beispiele (alle mit Sticky-Notes-Erklärung): **`n8n-grundlagen.json`** (Grundlogik, Trigger-Arten & wichtigste Bausteine), **`ai-agent-grundlagen.json`** (KI-Agent mit Sprachmodell, Memory & Tool), **`ai-agent-datatable.json`** (KI-Agent → Antwort in eine n8n Data Table speichern), **`ai-agent-tool-webhook.json`** (KI-Agent ruft per Tool den hello-webhook auf), **`hello-webhook.json`** (Mini-Workflow). |
 | `frontend-starter/` | Lauffähige Web-App: Formular → n8n-Webhook (+ optionaler KI-Chat). |
 | `backend-example/` | Lauffähiges FastAPI-Backend (`/health` + Beispiel-Endpoint). |
 | `docs/datenbank.md` | Wann welche Datenbank (n8n Data Tables / Supabase / SQLite). |
@@ -102,7 +102,8 @@ Claude baut den Workflow und **validiert, testet mit Beispieldaten, dokumentiert
 - `examples/workflows/n8n-grundlagen.json` — Grundlogik, die **Trigger-Arten** und die wichtigsten Bausteine (Set, IF, Webhook, HTTP, Code, Switch, Filter …).
 - `examples/workflows/ai-agent-grundlagen.json` — ein **KI-Agent** mit Sprachmodell (Claude), Memory und einem Tool, inkl. der speziellen `ai_*`-Verbindungen.
 - `examples/workflows/ai-agent-datatable.json` — praxisnah: **Chat → KI-Agent → Ergebnis in eine n8n Data Table speichern** (Persistenz ganz ohne externe Datenbank).
-- `examples/workflows/hello-webhook.json` — ein Mini-Workflow zum schnellen Ausprobieren.
+- `examples/workflows/ai-agent-tool-webhook.json` — der **KI-Agent benutzt ein Tool**: ruft live den `hello-webhook` (oder jede andere API) auf. Schön in Kombination mit `hello-webhook.json`.
+- `examples/workflows/hello-webhook.json` — ein Mini-Workflow zum schnellen Ausprobieren (und als Ziel des Agent-Tools oben).
 
 ---
 
