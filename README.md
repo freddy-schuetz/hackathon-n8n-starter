@@ -56,27 +56,49 @@ Ordner in Claude Code öffnen → der n8n-MCP-Server (`npx n8n-mcp`) und alle Sk
 
 ---
 
-## 📦 Was ist drin?
+## 📦 Was ist drin? (und was es für dich tut)
 
-```
-.claude/skills/      Vorkonfigurierte Skills (n8n-Bauen, Testdaten, Doku, Security, Frontend, Backend)
-.mcp.json.example    Vorlage für die n8n-MCP-Anbindung (du trägst deinen Key ein)
-CLAUDE.md            n8n-Konventionen (lädt automatisch, hilft Claude beim korrekten Bauen)
-examples/workflows/  Importierbarer Demo-Workflow für den Einstieg
-frontend-starter/    Lauffähige Next.js-App (Formular → n8n-Webhook, optional KI-Chat)
-backend-example/     Lauffähiges FastAPI-Backend (für eigene Rechen-/DB-Logik)
-```
+### Die Skills — das „Wissen", das Claude automatisch nutzt
+Skills sind Spickzettel, die Claude **von selbst** heranzieht, sobald sie zum Thema passen — du musst sie nicht aufrufen.
 
-**Workflows dokumentieren:** Der Skill `n8n-dokumentation` fügt auf Wunsch **Sticky Notes in einfacher Sprache** in deinen Workflow ein — so siehst du auf einen Blick, was wo passiert.
+**Workflows richtig bauen** (von [czlonkowski](https://github.com/czlonkowski/n8n-skills)):
+- `n8n-mcp-tools-expert` — wie man die n8n-Werkzeuge richtig bedient (Nodes suchen, Workflow anlegen, prüfen).
+- `n8n-workflow-patterns` — bewährte Baumuster: Webhook, API-Aufruf, Datenbank, KI-Agent, Zeitplan.
+- `n8n-node-configuration` — wie man einen einzelnen Baustein (Node) korrekt einstellt.
+- `n8n-expression-syntax` — die `{{ }}`-Ausdrücke, mit denen Daten durch den Workflow fließen.
+- `n8n-code-javascript` / `n8n-code-python` — falls mal eigener Code in einem Node nötig ist.
+
+**Qualität sichern & verständlich machen** (von uns):
+- `n8n-validation-expert` — findet Fehler im Workflow und erklärt sie.
+- `n8n-testdaten` — erzeugt Testfälle und probiert den Workflow durch.
+- `n8n-dokumentation` — schreibt **Sticky Notes in einfacher Sprache** in den Workflow, damit du auf einen Blick siehst, was wo passiert.
+- `n8n-security-audit` — Sicherheits-Check vor dem Aktivieren (keine offenen Keys, Webhooks abgesichert …).
+- `n8n-pruefbericht` — erstellt am Ende einen kurzen, verständlichen Bericht zum Workflow.
+
+**Optional: eigene Oberfläche / eigenes Backend**
+- `frontend-build` / `frontend-scaffold` — eine Web-App (Next.js) bauen, die deinen n8n-Workflow aufruft.
+- `backend-fastapi` — ein eigenes Python-Backend, wenn n8n für schwere Rechen-/Datenlogik nicht reicht.
+
+### Die Dateien & Ordner
+| Pfad | Was es ist |
+|------|-----------|
+| `CLAUDE.md` | Die Spielregeln für Claude (lädt automatisch) — sorgt dafür, dass Workflows korrekt gebaut, getestet **und automatisch dokumentiert** werden. |
+| `.mcp.json.example` | Vorlage für die Verbindung zu deinem n8n (du trägst URL + Key ein). |
+| `examples/workflows/hello-webhook.json` | Ein fertiger Mini-Workflow zum Importieren & Anschauen. |
+| `frontend-starter/` | Lauffähige Web-App: Formular → n8n-Webhook (+ optionaler KI-Chat). |
+| `backend-example/` | Lauffähiges FastAPI-Backend (`/health` + Beispiel-Endpoint). |
+| `docs/datenbank.md` | Wann welche Datenbank (n8n Data Tables / Supabase / SQLite). |
 
 ---
 
 ## 🧪 Dein erster Workflow
 
-Sag zu Claude z.B.:
-> „Bau mir einen Workflow: Webhook empfängt einen Namen, und antworte mit einer freundlichen Begrüßung. Danach dokumentiere ihn mit Sticky Notes."
+Sag zu Claude einfach, was du brauchst — z.B.:
+> „Bau mir einen Workflow: Ein Webhook empfängt einen Namen und antwortet mit einer freundlichen Begrüßung."
 
-Oder importiere `examples/workflows/hello-webhook.json` direkt in n8n (Workflows → Import from File).
+Claude baut den Workflow und **validiert, testet mit Beispieldaten, dokumentiert ihn mit Sticky Notes und macht einen Sicherheits-Check — automatisch**, ohne dass du danach extra darum bitten musst (so ist es in `CLAUDE.md` festgelegt). Berichtet wird am Ende verständlich, was gemacht wurde.
+
+Lieber erstmal anschauen? Importiere `examples/workflows/hello-webhook.json` direkt in n8n (Workflows → Import from File).
 
 ---
 

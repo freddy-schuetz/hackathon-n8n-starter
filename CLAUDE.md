@@ -5,7 +5,15 @@ Diese Datei wird beim Öffnen des Projekts automatisch geladen und enthält die 
 ## Was ist das?
 Eine fertige Grundlage, um mit **Claude Code + n8n-mcp** Automatisierungs-Workflows in **n8n** zu bauen — plus optionale Starter für **Frontend** (Next.js) und **Backend** (FastAPI). Die geladenen Skills helfen Claude, korrekte Workflows zu erzeugen.
 
+## Arbeitsweise (WICHTIG — so verhältst du dich)
+- **Zielgruppe sind Einsteiger.** Erkläre in **einfacher Sprache**, ohne unerklärten Fachjargon.
+- **Sei proaktiv:** Führe den Standard-Prozess **selbstständig** durch — frag den User nicht für jeden Schritt um Erlaubnis.
+- **Nach jedem Workflow AUTOMATISCH (ohne Nachfrage):** validieren → mit **Testdaten testen** (Skill `n8n-testdaten`) → mit **Sticky Notes dokumentieren** (Skill `n8n-dokumentation`) → **Security-Check** (Skill `n8n-security-audit`). Ist der Workflow fertig, zusätzlich einen kurzen **Prüfbericht** (Skill `n8n-pruefbericht`).
+- **Silent Execution:** Werkzeuge ohne Zwischenkommentar ausführen, danach **kurz und verständlich** berichten, was gebaut/getestet/dokumentiert wurde.
+
 ## Workflow-Erstellung: Standard-Prozess
+Diesen Ablauf führst du **automatisch** durch (Schritte 6–9 ohne Extra-Aufforderung):
+
 1. `tools_documentation()` — Best Practices laden
 2. `search_templates({query: "..."})` — passende Vorlage prüfen
 3. Passt eine Vorlage: `n8n_deploy_template({templateId})` — **Autor nennen**
