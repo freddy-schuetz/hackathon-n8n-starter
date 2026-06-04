@@ -84,7 +84,7 @@ Skills sind Spickzettel, die Claude **von selbst** heranzieht, sobald sie zum Th
 |------|-----------|
 | `CLAUDE.md` | Die Spielregeln für Claude (lädt automatisch) — sorgt dafür, dass Workflows korrekt gebaut, getestet **und automatisch dokumentiert** werden. |
 | `.mcp.json.example` | Vorlage für die Verbindung zu deinem n8n (du trägst URL + Key ein). |
-| `examples/workflows/hello-webhook.json` | Ein fertiger Mini-Workflow zum Importieren & Anschauen. |
+| `examples/workflows/` | Importierbare Beispiele: **`n8n-grundlagen.json`** (erklärte Tour durch n8n + die wichtigsten Bausteine, mit Sticky Notes) und **`hello-webhook.json`** (Mini-Workflow). |
 | `frontend-starter/` | Lauffähige Web-App: Formular → n8n-Webhook (+ optionaler KI-Chat). |
 | `backend-example/` | Lauffähiges FastAPI-Backend (`/health` + Beispiel-Endpoint). |
 | `docs/datenbank.md` | Wann welche Datenbank (n8n Data Tables / Supabase / SQLite). |
@@ -98,7 +98,7 @@ Sag zu Claude einfach, was du brauchst — z.B.:
 
 Claude baut den Workflow und **validiert, testet mit Beispieldaten, dokumentiert ihn mit Sticky Notes und macht einen Sicherheits-Check — automatisch**, ohne dass du danach extra darum bitten musst (so ist es in `CLAUDE.md` festgelegt). Berichtet wird am Ende verständlich, was gemacht wurde.
 
-Lieber erstmal anschauen? Importiere `examples/workflows/hello-webhook.json` direkt in n8n (Workflows → Import from File).
+**Lieber erst lernen?** Importiere `examples/workflows/n8n-grundlagen.json` in n8n (Workflows → Import from File) — ein Workflow, der dir mit **Sticky Notes** die Grundlogik von n8n und die wichtigsten Bausteine (Trigger, Set, IF, Webhook, HTTP, Code, Switch, Filter …) erklärt. Der Mini-Workflow `hello-webhook.json` liegt ebenfalls dort.
 
 ---
 

@@ -1,0 +1,331 @@
+{
+  "name": "n8n-Grundlagen (Lern-Workflow)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## So funktioniert n8n\n\nEin **Trigger** startet den Workflow (Klick, Zeitplan oder Webhook).\nDie **Nodes** (Bausteine) verarbeiten dann die Daten — verbunden durch **Linien**, an denen die Daten von links nach rechts fließen.\n\nDaten sind eine Liste von **Items** (jedes Item ist JSON). Auf Werte greifst du mit Ausdrücken zu: `{{ $json.feld }}`.\n\n👉 Klick oben auf **Test workflow**, um den Ablauf unten einmal laufen zu lassen.",
+        "height": 260,
+        "width": 540,
+        "color": 4
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000a0",
+      "name": "Doku: Überblick",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-60, -360]
+    },
+    {
+      "parameters": {
+        "content": "## 1) Trigger\nStartet den Workflow. Hier: **manuell** per Klick auf „Test workflow\".",
+        "height": 120,
+        "width": 200,
+        "color": 5
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000a1",
+      "name": "Doku: Trigger",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-20, -150]
+    },
+    {
+      "parameters": {
+        "content": "## 2) Edit Fields (Set)\nSetzt oder ändert Felder. Hier: `name` und `age`.",
+        "height": 120,
+        "width": 200,
+        "color": 3
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000a2",
+      "name": "Doku: Set",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [220, -150]
+    },
+    {
+      "parameters": {
+        "content": "## 3) IF — Verzweigung\nPrüft eine Bedingung (`age ≥ 18`).\n**Grün = wahr**, **rot = falsch** → es geht unterschiedlich weiter.",
+        "height": 120,
+        "width": 220,
+        "color": 6
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000a3",
+      "name": "Doku: IF",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [480, -150]
+    },
+    {
+      "parameters": {
+        "content": "## 4) Pro Zweig weiter\nJeder Ausgang macht etwas anderes — hier wird ein `status` gesetzt.",
+        "height": 130,
+        "width": 220,
+        "color": 3
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000a4",
+      "name": "Doku: Zweige",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [760, -190]
+    },
+    {
+      "parameters": {},
+      "id": "5ce1aa00-0000-4000-8000-0000000000b1",
+      "name": "Start (Manuell)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [40, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "f1", "name": "name", "value": "Max", "type": "string" },
+            { "id": "f2", "name": "age", "value": 20, "type": "number" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000b2",
+      "name": "Person-Daten setzen",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [280, 0]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose", "version": 2 },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.age }}",
+              "rightValue": 18,
+              "operator": { "type": "number", "operation": "gte" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000b3",
+      "name": "Alter ≥ 18?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [520, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "f3", "name": "status", "value": "volljährig", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000b4",
+      "name": "Als volljährig markieren",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [780, -100]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "f4", "name": "status", "value": "minderjährig", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000b5",
+      "name": "Als minderjährig markieren",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [780, 100]
+    },
+    {
+      "parameters": {
+        "content": "## Weitere wichtige Bausteine (nur zum Anschauen)\nDiese Nodes sind absichtlich **nicht verbunden** — öffne sie per Doppelklick, um zu sehen, was sie tun.",
+        "height": 70,
+        "width": 1180,
+        "color": 7
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000c0",
+      "name": "Doku: Galerie",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-60, 320]
+    },
+    {
+      "parameters": {
+        "content": "**Webhook**\nStartet den Workflow per HTTP-Aufruf von außen.\nDaten liegen unter `{{ $json.body }}`.",
+        "height": 110,
+        "width": 220,
+        "color": 5
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000c1",
+      "name": "Doku: Webhook",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-20, 410]
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "demo",
+        "options": {}
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000d1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [40, 540],
+      "webhookId": "grundlagen-demo"
+    },
+    {
+      "parameters": {
+        "content": "**Schedule (Zeitplan)**\nStartet den Workflow zeitgesteuert (z.B. stündlich, täglich).",
+        "height": 110,
+        "width": 220,
+        "color": 5
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000c2",
+      "name": "Doku: Schedule",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [220, 410]
+    },
+    {
+      "parameters": {
+        "rule": { "interval": [{ "field": "hours", "hoursInterval": 1 }] }
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000d2",
+      "name": "Zeitplan (Schedule)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [300, 540]
+    },
+    {
+      "parameters": {
+        "content": "**HTTP Request**\nRuft eine externe API oder Website auf (GET/POST …) und holt Daten.",
+        "height": 110,
+        "width": 220,
+        "color": 6
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000c3",
+      "name": "Doku: HTTP",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [460, 410]
+    },
+    {
+      "parameters": {
+        "url": "https://api.example.com/data",
+        "options": {}
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000d3",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [540, 540]
+    },
+    {
+      "parameters": {
+        "content": "**Code**\nEigenes JavaScript/Python, wenn Standard-Nodes nicht reichen. (Letzter Ausweg!)",
+        "height": 110,
+        "width": 220,
+        "color": 3
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000c4",
+      "name": "Doku: Code",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [700, 410]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Jedes Item kann hier transformiert werden.\nfor (const item of $input.all()) {\n  item.json.hallo = 'welt';\n}\nreturn $input.all();"
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000d4",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [780, 540]
+    },
+    {
+      "parameters": {
+        "content": "**Switch**\nWie IF, aber mit **mehreren** Wegen (mehr als zwei Fälle).",
+        "height": 110,
+        "width": 220,
+        "color": 6
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000c5",
+      "name": "Doku: Switch",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [940, 410]
+    },
+    {
+      "parameters": {
+        "rules": { "values": [] },
+        "options": {}
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000d5",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [1020, 540]
+    },
+    {
+      "parameters": {
+        "content": "**Filter**\nLässt nur die Items durch, die eine Bedingung erfüllen.",
+        "height": 110,
+        "width": 220,
+        "color": 2
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000c6",
+      "name": "Doku: Filter",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1180, 410]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose", "version": 2 },
+          "conditions": [
+            {
+              "id": "c2",
+              "leftValue": "={{ $json.age }}",
+              "rightValue": 18,
+              "operator": { "type": "number", "operation": "gte" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5ce1aa00-0000-4000-8000-0000000000d6",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [1260, 540]
+    }
+  ],
+  "connections": {
+    "Start (Manuell)": {
+      "main": [[{ "node": "Person-Daten setzen", "type": "main", "index": 0 }]]
+    },
+    "Person-Daten setzen": {
+      "main": [[{ "node": "Alter ≥ 18?", "type": "main", "index": 0 }]]
+    },
+    "Alter ≥ 18?": {
+      "main": [
+        [{ "node": "Als volljährig markieren", "type": "main", "index": 0 }],
+        [{ "node": "Als minderjährig markieren", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
