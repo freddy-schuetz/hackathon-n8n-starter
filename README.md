@@ -12,7 +12,7 @@ Eine fertige Grundlage, um beim Hackathon mit **Claude Code** und **n8n** sofort
 
 Claude erledigt den Rest (klonen, konfigurieren) und fragt dich nur nach deinem n8n-Zugang. Danach kannst du direkt Workflows bauen lassen.
 
-> Du brauchst vorher nur: **Claude Code Desktop** (eingeloggt mit deinem Claude-Account), **Node.js ≥ 20** und **git**.
+> Du brauchst nur **Claude Code Desktop** (eingeloggt mit deinem Claude-Account). **Node.js und git richtet Claude beim Setup automatisch ein** (per `winget`/`brew`) — du musst nichts vorinstallieren.
 >
 > 🧩 **Du nutzt Codex, OpenCode o.ä. statt Claude Code?** → Setup-Anleitung in **[AGENTS.md](AGENTS.md)**.
 
@@ -20,21 +20,24 @@ Claude erledigt den Rest (klonen, konfigurieren) und fragt dich nur nach deinem 
 
 ## 🤖 Setup-Anleitung für Claude (Agent-Runbook)
 
-*Wenn dich jemand bittet, dieses Repo einzurichten, arbeite diese Schritte ab:*
+*Wenn dich jemand bittet, dieses Repo einzurichten, arbeite diese Schritte ab — Ziel: **EIN Befehl, danach läuft alles**. Erledige die Voraussetzungen selbst, lass den User nichts vorinstallieren.*
 
-1. **Klonen** (falls noch nicht geschehen) und den Ordner als Projekt öffnen:
-   ```bash
-   git clone https://github.com/freddy-schuetz/hackathon-n8n-starter
-   ```
-2. **MCP-Konfig anlegen:** `cp .mcp.json.example .mcp.json`
-3. **n8n-Zugang erfragen** und in `.mcp.json` eintragen (Felder `N8N_API_URL` und `N8N_API_KEY`):
-   - Frage den User nach seiner **n8n-Cloud-URL** (z.B. `https://xxxx.app.n8n.cloud`) und seinem **n8n-API-Key**.
-   - Hat er noch keinen: Anleitung in Schritt „n8n-Trial holen" unten weitergeben.
-   - `.mcp.json` ist über `.gitignore` ausgeschlossen → der Key bleibt lokal. **Den Key niemals committen oder ausgeben.**
-4. **(Optional) Frontend-Deps installieren**, falls der User eine UI will: `cd frontend-starter && npm install`.
-5. **User bitten**, Claude Code neu zu laden/starten, damit der n8n-MCP-Server + die Skills aktiv werden.
-6. **Verbindung testen:** `n8n_health_check` aufrufen → muss OK liefern.
-7. **Fertig melden** und anbieten: „Soll ich dir deinen ersten Workflow bauen? Es gibt ein Beispiel unter `examples/workflows/hello-webhook.json`."
+1. **Voraussetzungen prüfen & ggf. installieren:**
+   - `git --version` und `node --version` prüfen (Node ≥ 20 — wird für den n8n-MCP-Server via `npx` gebraucht).
+   - Fehlt etwas, installieren:
+     - **Windows:** `winget install --silent --accept-package-agreements --accept-source-agreements Git.Git` bzw. `OpenJS.NodeJS.LTS`
+     - **macOS:** `brew install git node` (kein Homebrew vorhanden? → von [nodejs.org](https://nodejs.org) bzw. [git-scm.com](https://git-scm.com))
+     - **Linux:** Paketmanager, z.B. `sudo apt install -y git nodejs npm`
+   - ⚠️ Windows zeigt evtl. eine **UAC-Abfrage** (vom User bestätigen lassen). Nach der Installation ist das Programm oft erst in einem **neuen** Terminal im PATH — falls `node`/`git` direkt danach „not found": den User bitten, Claude Code **einmal neu zu starten**, dann hier weiter.
+2. **Klonen** und den Ordner als Projekt öffnen: `git clone https://github.com/freddy-schuetz/hackathon-n8n-starter`
+3. **MCP-Konfig anlegen:** `cp .mcp.json.example .mcp.json`
+4. **n8n-Zugang erfragen** und in `.mcp.json` eintragen (`N8N_API_URL`, `N8N_API_KEY`):
+   - Frage nach **n8n-Cloud-URL** + **API-Key**. Hat der User keinen: Anleitung „n8n-Trial holen" unten weitergeben.
+   - `.mcp.json` ist gitignored → Key bleibt lokal. **Niemals committen oder ausgeben.**
+5. **(Optional) Frontend-Deps**, falls eine UI gewünscht ist: `cd frontend-starter && npm install`.
+6. **User bitten, Claude Code neu zu laden/starten**, damit n8n-MCP + Skills aktiv werden.
+7. **Verbindung testen:** `n8n_health_check` → muss OK liefern.
+8. **Fertig melden** und ersten Workflow anbieten (Beispiele in `examples/workflows/`).
 
 ---
 

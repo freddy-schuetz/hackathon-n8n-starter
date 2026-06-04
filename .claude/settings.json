@@ -21,7 +21,11 @@
       "Bash(npm run build:*)",
       "Bash(npm run dev:*)",
       "Bash(node:*)",
-      "Bash(git clone:*)"
+      "Bash(node --version)",
+      "Bash(git --version)",
+      "Bash(git clone:*)",
+      "Bash(winget install:*)",
+      "Bash(brew install:*)"
     ]
   },
   "hooks": {

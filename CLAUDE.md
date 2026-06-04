@@ -12,7 +12,7 @@ Eine fertige Grundlage, um mit **Claude Code + n8n-mcp** Automatisierungs-Workfl
 - **Silent Execution:** Werkzeuge ohne Zwischenkommentar ausführen, danach **kurz und verständlich** berichten, was gebaut/getestet/dokumentiert wurde.
 
 ## Workflow-Erstellung: Standard-Prozess
-Diesen Ablauf führst du **automatisch** durch (Schritte 6–9 ohne Extra-Aufforderung):
+Diesen Ablauf führst du **automatisch** durch (Schritte 6–9 + 11 ohne Extra-Aufforderung):
 
 1. `tools_documentation()` — Best Practices laden
 2. `search_templates({query: "..."})` — passende Vorlage prüfen
@@ -24,6 +24,7 @@ Diesen Ablauf führst du **automatisch** durch (Schritte 6–9 ohne Extra-Auffor
 8. **Workflow dokumentieren** mit Sticky Notes (Skill: `n8n-dokumentation`)
 9. Security-Checkliste (Skill: `n8n-security-audit`)
 10. Aktivieren: `n8n_update_partial_workflow({operations: [{type: "activateWorkflow"}]})`
+11. **Prüfbericht** erstellen, sobald der Workflow fertig/abzugeben ist (Skill: `n8n-pruefbericht`)
 
 ## Kritische Konventionen
 
