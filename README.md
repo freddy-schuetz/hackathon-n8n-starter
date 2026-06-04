@@ -137,6 +137,13 @@ Lokal läuft deine App **nur auf deinem Laptop**. Für eine **öffentliche Inter
 
 Dein **n8n-Backend bleibt unverändert** (ist schon in der Cloud) — nur das Frontend wird gehostet.
 
+### 💾 (Optional) Projekt sichern/teilen → GitHub
+Willst du deinen Code **sichern**, im **Team teilen** oder behalten — sag **„lade mein Projekt auf GitHub"**. Claude legt ein Repository an und lädt es hoch.
+
+**Einmalig nötig (kann Claude nicht für dich tun):** ein **kostenloses [GitHub](https://github.com)-Konto** und ein **Login** (`gh auth login`, öffnet den Browser). Danach erledigt Claude den Rest (`git` + `gh repo create`).
+
+> Für den **Vercel-Deploy brauchst du GitHub nicht** (der läuft über die Vercel-CLI). GitHub ist nur fürs Sichern/Teilen — komplett optional.
+
 ### Die Seeds zum Draufaufbauen
 - **`frontend-starter/`** — minimales Beispiel: Formular → n8n-Webhook + optionaler KI-Chat.
 - **`backend-example/`** — FastAPI-Service (`/health` + Beispiel-Endpoint), falls n8n für schwere Rechen-/DB-/Geo-Logik nicht reicht.

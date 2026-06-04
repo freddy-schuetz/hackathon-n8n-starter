@@ -26,7 +26,14 @@
       "Bash(git clone:*)",
       "Bash(winget install:*)",
       "Bash(brew install:*)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo create:*)"
     ]
   },
   "hooks": {
