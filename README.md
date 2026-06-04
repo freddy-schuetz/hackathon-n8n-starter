@@ -124,9 +124,18 @@ Sag einfach **„starte mein Frontend"**. Claude installiert alles und startet d
 > `localhost` heißt: läuft **lokal auf deinem Laptop** — perfekt zum Bauen, Testen und für eine Demo am eigenen Bildschirm. (Dein n8n-Backend ist ja schon in der Cloud, deshalb funktioniert die ganze App so bereits komplett.)
 
 ### 🌍 Willst du es online teilen? → „Vercel"
-Solange du nur lokal startest, läuft deine App **nur auf deinem Laptop** — andere können sie nicht öffnen. Möchtest du eine **öffentliche Internet-Adresse**, die jeder aufrufen kann (z.B. für die Abschluss-Präsentation), bringst du das Frontend zu **[Vercel](https://vercel.com)**.
+Lokal läuft deine App **nur auf deinem Laptop**. Für eine **öffentliche Internet-URL** (z.B. zur Präsentation) bringst du das Frontend zu **[Vercel](https://vercel.com)** — einem **kostenlosen Hosting-Dienst für Web-Apps**, der dein Frontend zu einer echten Adresse macht (z.B. `https://mein-projekt.vercel.app`).
 
-**Was ist Vercel?** Ein **kostenloser Hosting-Dienst für Web-Apps**. Du gibst ihm dein Frontend, und es macht daraus eine echte **URL im Internet** (z.B. `https://mein-projekt.vercel.app`). Dein **n8n-Backend bleibt unverändert** (das ist schon in der n8n-Cloud). Sag **„stell mein Frontend online"** — Claude führt dich durch die Schritte.
+**Das machst du selbst (einmalig, ~2 Min — kann Claude nicht für dich tun):**
+1. Auf **[vercel.com](https://vercel.com)** ein **kostenloses Konto** anlegen („Sign Up" — am einfachsten „Continue with GitHub", sonst E-Mail).
+2. Wenn Claude gleich `vercel login` ausführt: im Browser, der aufgeht, kurz **bestätigen**.
+
+**Den Rest macht Claude** — sag einfach **„stell mein Frontend online"**:
+- deployt die App (`npx vercel --prod`),
+- trägt deine **n8n-URL** als Einstellung (`NEXT_PUBLIC_N8N_BASE`) bei Vercel ein, damit die Online-App dein n8n erreicht,
+- gibt dir die fertige **öffentliche URL**.
+
+Dein **n8n-Backend bleibt unverändert** (ist schon in der Cloud) — nur das Frontend wird gehostet.
 
 ### Die Seeds zum Draufaufbauen
 - **`frontend-starter/`** — minimales Beispiel: Formular → n8n-Webhook + optionaler KI-Chat.

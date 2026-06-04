@@ -25,7 +25,8 @@
       "Bash(git --version)",
       "Bash(git clone:*)",
       "Bash(winget install:*)",
-      "Bash(brew install:*)"
+      "Bash(brew install:*)",
+      "Bash(npx vercel:*)"
     ]
   },
   "hooks": {

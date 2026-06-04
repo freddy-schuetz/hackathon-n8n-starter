@@ -93,11 +93,12 @@ const { messages, sendMessage, status } = useChat();
 
 ## Vercel-Deploy-Playbook
 
-- ⚠️ **`vercel deploy --prod` hängt häufig → stattdessen `git push`** (Vercel GitHub-Integration deployt automatisch). Das ist der verlässliche Weg.
-- ⚠️ **`NEXT_PUBLIC_*` ist build-time** — nach Änderung im Vercel-Dashboard **neu bauen/redeployen**, sonst greift der alte Wert.
+- **Schnellweg (einmaliger Hackathon-Deploy):** im Frontend-Ordner `npx vercel login` (Browser-Login macht der User), dann `npx vercel --prod`. Geht **ohne** GitHub-Repo. Env-Vars vorher per `npx vercel env add <NAME> production` setzen (oder im Dashboard).
+- **Laufende Entwicklung:** Git-Import (Repo in Vercel importieren) → jeder `git push` deployt automatisch.
+- ⚠️ **`NEXT_PUBLIC_*` ist build-time** — Env **vor** dem Build setzen; nach Änderung **neu deployen**, sonst greift der alte Wert.
+- ⚠️ **git-Autor-Mail muss zu deinem GitHub-Account passen** (nur Git-Weg), sonst kann Vercel den Push ablehnen.
 - **Monorepo:** in Vercel `rootDirectory = frontend` setzen.
-- ⚠️ **git-Autor-Mail muss zu deinem GitHub-Account passen**, sonst kann Vercel den Push ablehnen.
-- Secrets gehören ins Vercel-Dashboard / `.env.local`, **nie** ins Repo.
+- Falls die CLI mal hängt: den **Git-Import-Weg** nutzen. Secrets nur ins Vercel-Dashboard / `.env.local`, **nie** ins Repo.
 
 ## Vor dem Push verifizieren (Pflicht)
 
