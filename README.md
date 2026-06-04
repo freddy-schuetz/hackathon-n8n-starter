@@ -4,7 +4,7 @@ Eine fertige Grundlage, um beim Hackathon mit **Claude Code** und **n8n** sofort
 
 ---
 
-## ✨ Einrichten in 1 Satz
+## ✨ Einrichten mit nur einem Satz
 
 Öffne die **Claude Code Desktop-App** und schreib:
 
