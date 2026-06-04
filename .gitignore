@@ -1,0 +1,23 @@
+# Secrets — NIEMALS committen
+.mcp.json
+.env
+.env.local
+.env*.local
+
+# Dependencies / Build
+node_modules/
+.next/
+out/
+dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Claude Code lokal
+.claude/settings.local.json
+backup/
+
+# OS
+.DS_Store
+Thumbs.db

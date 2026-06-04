@@ -1,0 +1,86 @@
+# Hackathon-Starter: n8n + Claude Code
+
+Diese Datei wird beim Öffnen des Projekts automatisch geladen und enthält die wichtigsten n8n-Konventionen. **Erst-Setup noch nicht erledigt?** → siehe [README.md](README.md).
+
+## Was ist das?
+Eine fertige Grundlage, um mit **Claude Code + n8n-mcp** Automatisierungs-Workflows in **n8n** zu bauen — plus optionale Starter für **Frontend** (Next.js) und **Backend** (FastAPI). Die geladenen Skills helfen Claude, korrekte Workflows zu erzeugen.
+
+## Workflow-Erstellung: Standard-Prozess
+1. `tools_documentation()` — Best Practices laden
+2. `search_templates({query: "..."})` — passende Vorlage prüfen
+3. Passt eine Vorlage: `n8n_deploy_template({templateId})` — **Autor nennen**
+4. Sonst: `search_nodes()` → `get_node({detail: "standard"})` → `n8n_create_workflow()`
+5. Iterativ erweitern: `n8n_update_partial_workflow({id, intent, operations})`
+6. Validieren: `n8n_validate_workflow({id})` → `n8n_autofix_workflow({id})`
+7. Testdaten generieren und testen (Skill: `n8n-testdaten`)
+8. **Workflow dokumentieren** mit Sticky Notes (Skill: `n8n-dokumentation`)
+9. Security-Checkliste (Skill: `n8n-security-audit`)
+10. Aktivieren: `n8n_update_partial_workflow({operations: [{type: "activateWorkflow"}]})`
+
+## Kritische Konventionen
+
+### nodeType-Formate (je nach Tool unterschiedlich!)
+| Tool-Kategorie | Format | Beispiel |
+|---------------|--------|----------|
+| Search/Validate | `nodes-base.*` | `nodes-base.slack` |
+| Workflow-Tools | `n8n-nodes-base.*` | `n8n-nodes-base.slack` |
+| AI/LangChain | `@n8n/n8n-nodes-langchain.*` | `@n8n/n8n-nodes-langchain.agent` |
+
+### Webhook-Datenstruktur
+Webhook-Daten liegen unter `.body`:
+```
+FALSCH:  {{$json.email}}
+RICHTIG: {{$json.body.email}}
+```
+
+### Expression-Syntax
+- Expressions immer mit `{{}}`: `{{$json.field}}`
+- In **Code Nodes KEIN** `{{}}`: `$json.field`
+- Node-Namen mit Leerzeichen in Quotes: `{{$node["HTTP Request"].json.data}}`
+- Node-Namen sind case-sensitive
+
+### IF-Node Multi-Output Routing (KRITISCH!)
+IF-Nodes haben zwei Outputs. `branch` setzen, sonst landen beide Connections am selben Output:
+```json
+{type: "addConnection", source: "If", target: "True Handler", sourcePort: "main", targetPort: "main", branch: "true"}
+{type: "addConnection", source: "If", target: "False Handler", sourcePort: "main", targetPort: "main", branch: "false"}
+```
+Switch-Node: `case: 0`, `case: 1`, …
+
+### addConnection-Syntax (vier separate String-Parameter!)
+```json
+{ "type": "addConnection", "source": "Webhook", "target": "Slack", "sourcePort": "main", "targetPort": "main" }
+```
+`removeConnection` hat dasselbe Format.
+
+### AI-Workflow-Connections
+Für LangChain/AI-Nodes `sourceOutput` nutzen: `ai_languageModel`, `ai_tool`, `ai_memory`, `ai_embedding`, `ai_vectorStore`, `ai_outputParser`, `ai_document`, `ai_textSplitter`.
+
+## Best Practices
+
+### Do
+- **Template-First**: immer Templates prüfen, bevor von Scratch gebaut wird
+- **Explicit Parameters**: ALLE Parameter explizit setzen (Default-Werte = #1 Fehlerquelle)
+- Workflows **iterativ** bauen, `intent` bei Updates angeben
+- Nach signifikanten Änderungen validieren; Validation-Profil `runtime`
+- Batch-Operationen in **einem** `n8n_update_partial_workflow`-Call
+- `includeExamples: true` für echte Konfigurationsbeispiele
+
+### Don't
+- nodeType-Prefix vergessen
+- Validation vor Aktivierung überspringen
+- Expression-Syntax in Code Nodes verwenden
+- **Code Nodes nutzen, wenn Standard-Nodes verfügbar sind** (Code = letzter Ausweg)
+
+## Sicherheit
+1. **API-Keys niemals** in Workflow-Parametern — n8n **Credentials** nutzen!
+2. Security-Checkliste vor Aktivierung (Skill: `n8n-security-audit`)
+3. Keine personenbezogenen Daten in Node-Namen/Notes
+4. Workflow-Änderungen werden automatisch nach `backup/` gesichert (Hook)
+
+## Datenbank?
+Meistens keine externe nötig. **n8n-Workflow** → **n8n Data Tables** (eingebaut, `n8n_manage_datatable`, 50 MB, in der Cloud-Trial). **Deployte App / Auth / Vektoren** → **Supabase Free**. **Nur lokal** → SQLite (nie auf Vercel-Serverless). Details: `docs/datenbank.md`.
+
+## Geladene Skills
+**n8n:** `n8n-mcp-tools-expert`, `n8n-workflow-patterns`, `n8n-node-configuration`, `n8n-expression-syntax`, `n8n-validation-expert`, `n8n-code-javascript`, `n8n-code-python` (von czlonkowski/n8n-skills) · `n8n-testdaten`, `n8n-dokumentation`, `n8n-security-audit`, `n8n-pruefbericht`
+**Frontend/Backend (optional):** `frontend-build`, `frontend-scaffold`, `backend-fastapi` — lauffähige Beispiele in `frontend-starter/` und `backend-example/`.
