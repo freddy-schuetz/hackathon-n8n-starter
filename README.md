@@ -81,7 +81,7 @@ Skills sind Spickzettel, die Claude **von selbst** heranzieht, sobald sie zum Th
 - `n8n-pruefbericht` — erstellt am Ende einen kurzen, verständlichen Bericht zum Workflow.
 
 **Optional: eigene Oberfläche / eigenes Backend**
-- `frontend-build` / `frontend-scaffold` — eine Web-App (Next.js) bauen, die deinen n8n-Workflow aufruft.
+- `frontend-build` / `frontend-scaffold` — **vollwertige** Web-Apps (Next.js) bauen: Formulare, Dashboards, Tabellen, Karten …, angebunden an n8n, FastAPI oder KI-Streaming.
 - `backend-fastapi` — ein eigenes Python-Backend, wenn n8n für schwere Rechen-/Datenlogik nicht reicht.
 
 ### Die Dateien & Ordner
@@ -114,8 +114,13 @@ Claude baut den Workflow und **validiert, testet mit Beispieldaten, dokumentiert
 
 ## 🎨 Optional: Frontend & Backend
 
-- **`frontend-starter/`** — Next.js-App mit Formular, das einen n8n-Webhook aufruft. Optionaler KI-Chat (braucht `ANTHROPIC_API_KEY`). Start: `cd frontend-starter && npm install && npm run dev`.
-- **`backend-example/`** — FastAPI-Service (`/health` + Beispiel-Endpoint), falls n8n für schwere Rechen-/DB-Logik nicht reicht. Start: siehe `backend-example/README.md`.
+Du willst eine eigene Oberfläche? Die Skills **`frontend-build`** + **`frontend-scaffold`** befähigen Claude, **vollwertige Next.js-Frontends** zu bauen — **nicht nur Formulare**: Multi-Page-Apps, Dashboards, Tabellen/Charts, **Karten (MapLibre)**, Chat-/Voice-UIs usw. Angebunden wahlweise an **n8n-Webhooks** (Muster A), ein **FastAPI-Backend** (Muster B) oder **KI-Streaming** (Muster C). Stack: Next.js 16 · React 19 · TypeScript · Tailwind 4.
+
+Sag z.B. *„bau mir ein Dashboard, das die Ergebnisse aus meinem n8n-Workflow anzeigt"* — Claude scaffoldet es nach diesen Konventionen.
+
+Lauffähige **Seeds** zum Draufaufbauen (bewusst minimal gehalten):
+- **`frontend-starter/`** — minimales Beispiel: Formular → n8n-Webhook + optionaler KI-Chat (braucht `ANTHROPIC_API_KEY`). Start: `cd frontend-starter && npm install && npm run dev`.
+- **`backend-example/`** — FastAPI-Service (`/health` + Beispiel-Endpoint), falls n8n für schwere Rechen-/DB-/Geo-Logik nicht reicht. Start: siehe `backend-example/README.md`.
 
 ---
 
