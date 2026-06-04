@@ -20,6 +20,8 @@ Claude erledigt den Rest (klonen, konfigurieren) und fragt dich nur nach deinem 
 
 ## 🤖 Setup-Anleitung für Claude (Agent-Runbook)
 
+> 💡 *Diesen Abschnitt liest **Claude** beim Einrichten. Als Teilnehmer kannst du ihn überspringen.*
+
 *Wenn dich jemand bittet, dieses Repo einzurichten, arbeite diese Schritte ab — Ziel: **EIN Befehl, danach läuft alles**. Erledige die Voraussetzungen selbst, lass den User nichts vorinstallieren.*
 
 1. **Voraussetzungen prüfen & ggf. installieren:**
@@ -50,7 +52,7 @@ Claude erledigt den Rest (klonen, konfigurieren) und fragt dich nur nach deinem 
 
 ---
 
-## 🛠️ Manuelles Setup (ohne Claude, falls gewünscht)
+## 🛠️ Manuelles Setup (statt der 1-Satz-Variante)
 
 ```bash
 git clone https://github.com/freddy-schuetz/hackathon-n8n-starter
@@ -71,10 +73,10 @@ Skills sind Spickzettel, die Claude **von selbst** heranzieht, sobald sie zum Th
 - `n8n-workflow-patterns` — bewährte Baumuster: Webhook, API-Aufruf, Datenbank, KI-Agent, Zeitplan.
 - `n8n-node-configuration` — wie man einen einzelnen Baustein (Node) korrekt einstellt.
 - `n8n-expression-syntax` — die `{{ }}`-Ausdrücke, mit denen Daten durch den Workflow fließen.
+- `n8n-validation-expert` — findet Fehler im Workflow und erklärt sie.
 - `n8n-code-javascript` / `n8n-code-python` — falls mal eigener Code in einem Node nötig ist.
 
 **Qualität sichern & verständlich machen** (von uns):
-- `n8n-validation-expert` — findet Fehler im Workflow und erklärt sie.
 - `n8n-testdaten` — erzeugt Testfälle und probiert den Workflow durch.
 - `n8n-dokumentation` — schreibt **Sticky Notes in einfacher Sprache** in den Workflow, damit du auf einen Blick siehst, was wo passiert.
 - `n8n-security-audit` — Sicherheits-Check vor dem Aktivieren (keine offenen Keys, Webhooks abgesichert …).
@@ -146,7 +148,7 @@ Willst du deinen Code **sichern**, im **Team teilen** oder behalten — sag **�
 
 ### Die Seeds zum Draufaufbauen
 - **`frontend-starter/`** — minimales Beispiel: Formular → n8n-Webhook + optionaler KI-Chat.
-- **`backend-example/`** — FastAPI-Service (`/health` + Beispiel-Endpoint), falls n8n für schwere Rechen-/DB-/Geo-Logik nicht reicht.
+- **`backend-example/`** — FastAPI-Service (`/health` + Beispiel-Endpoint), falls n8n für schwere Rechen-/DB-/Geo-Logik nicht reicht. Start: siehe `backend-example/README.md`.
 
 ---
 
@@ -154,7 +156,7 @@ Willst du deinen Code **sichern**, im **Team teilen** oder behalten — sag **�
 
 Meistens nicht extern. Faustregel:
 - **Daten im n8n-Workflow** → **n8n Data Tables** (eingebaut, null Setup, in der Trial dabei).
-- **Deployte App / Login / Vektoren** → **Supabase Free** (kein Kreditkarte).
+- **Deployte App / Login / Vektoren** → **Supabase Free** (keine Kreditkarte nötig).
 - **Nur lokal** → **SQLite** (nicht auf Vercel-Serverless!).
 
 Details + How-to: **[`docs/datenbank.md`](docs/datenbank.md)**.
