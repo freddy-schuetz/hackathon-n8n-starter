@@ -41,7 +41,7 @@ Ziel: n8n-Automatisierungs-Workflows bauen — mit deinem Agent + dem **n8n-mcp*
 
 ## Standard-Prozess (immer einhalten)
 
-1. `tools_documentation()` 2. **`search_templates()` (Template-First!)** 3. sonst `search_nodes` → `get_node` → `n8n_create_workflow` 4. `n8n_update_partial_workflow` 5. `n8n_validate_workflow` → `n8n_autofix_workflow` 6. **In deiner Instanz TESTEN** (fängt Laufzeitfehler, die der statische Validator nicht sieht!) 7. mit **Sticky Notes** dokumentieren 8. Security prüfen 9. aktivieren.
+1. `tools_documentation()` 2. **`search_templates()` (Template-First!)** 3. sonst `search_nodes` → `get_node` → `n8n_create_workflow` 4. `n8n_update_partial_workflow` 5. `n8n_validate_workflow` → `n8n_autofix_workflow` 6. **In deiner Instanz TESTEN** (fängt Laufzeitfehler, die der statische Validator nicht sieht!) 7. mit **Sticky Notes** dokumentieren 8. Security prüfen 9. aktivieren 10. bei fertigem/abzugebendem Workflow einen kurzen **Prüfbericht** erstellen (Tests, Validierung, Security-Status).
 
 ## Kritische n8n-Konventionen
 
