@@ -35,7 +35,7 @@ Ziel: n8n-Automatisierungs-Workflows bauen — mit deinem Agent + dem **n8n-mcp*
 ## Wissen & Beispiele
 
 - Das **tiefe n8n-Wissen liefert der n8n-mcp-Server selbst**: starte mit **`tools_documentation()`**, dann `search_nodes` / `get_node` / `search_templates` / `validate_workflow`.
-- Importierbare **Lern-Workflows** (mit Sticky-Notes-Erklärungen) in `examples/workflows/`: Grundlagen, KI-Agent, Agent-mit-Tool→Webhook, Agent→Data Table.
+- Importierbare **Lern-Workflows** (mit Sticky-Notes-Erklärungen) in `examples/workflows/`: Grundlagen, KI-Agent, Agent-mit-Tool→Webhook, Agent→Data Table, Mini-Webhook (`hello-webhook`).
 - **Frontend/Backend** (optional): lauffähige Beispiele in `frontend-starter/` (Next.js 16, n8n-Webhook + KI-Chat) und `backend-example/` (FastAPI) — Details in deren README. Datenbank-Wahl: `docs/datenbank.md`.
 - Hinweis: Die kuratierten Claude-Code-Skills unter `.claude/skills/` werden von Codex/OpenCode **nicht** geladen — die wichtigsten Regeln stehen unten, der Rest kommt über n8n-mcp.
 
@@ -51,7 +51,7 @@ Ziel: n8n-Automatisierungs-Workflows bauen — mit deinem Agent + dem **n8n-mcp*
 - **IF-Node:** zwei Outputs — `branch: "true"` / `branch: "false"` setzen, sonst landen beide am selben Ausgang.
 - **addConnection:** vier String-Parameter `source`, `target`, `sourcePort: "main"`, `targetPort: "main"`.
 - **AI-Connections:** Sub-Nodes per `ai_languageModel` / `ai_tool` / `ai_memory` an den Agent (nicht `main`).
-- **AI-Tool-Node-Namen:** nur Buchstaben/Ziffern/Unterstriche (kein Leerzeichen/Bindestrich/Umlaut) — der Name wird zum LLM-Funktionsnamen.
+- **AI-Tool-Node-Namen:** nur Buchstaben/Ziffern/Unterstriche (kein Leerzeichen/Bindestrich/Umlaut, nicht mit Ziffer beginnen) — der Name wird zum LLM-Funktionsnamen.
 - **HTTP-Tool für Agents:** `n8n-nodes-base.httpRequestTool` (v4.x) + `$fromAI('feld','Beschreibung','string')` — **nicht** der Legacy `@n8n/n8n-nodes-langchain.toolHttpRequest` (v1.1). Fast jeder Standard-Node kann als Tool dienen.
 - **AI-Sub-Nodes haben kein „Execute":** Tool/Modell/Memory laufen nur, wenn der Agent sie aufruft → Workflow über den **Chat** starten, Sub-Node nicht einzeln „Test step".
 

@@ -21,7 +21,7 @@ Diesen Ablauf führst du **automatisch** durch (Schritte 6–9 + 11 ohne Extra-A
 4. Sonst: `search_nodes()` → `get_node({detail: "standard"})` → `n8n_create_workflow()`
 5. Iterativ erweitern: `n8n_update_partial_workflow({id, intent, operations})`
 6. Validieren: `n8n_validate_workflow({id})` → `n8n_autofix_workflow({id})`
-7. Testdaten generieren und testen (Skill: `n8n-testdaten`)
+7. Testdaten generieren und **in der Instanz testen** — fängt Laufzeitfehler, die der statische Validator nicht sieht (Skill: `n8n-testdaten`)
 8. **Workflow dokumentieren** mit Sticky Notes (Skill: `n8n-dokumentation`)
 9. Security-Checkliste (Skill: `n8n-security-audit`)
 10. Aktivieren: `n8n_update_partial_workflow({operations: [{type: "activateWorkflow"}]})`
