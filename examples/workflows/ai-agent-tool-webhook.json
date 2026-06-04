@@ -93,7 +93,7 @@
       "parameters": {
         "promptType": "auto",
         "options": {
-          "systemMessage": "Du bist ein hilfreicher Assistent für ein Hackathon-Team. Wenn der User möchte, dass jemand begrüßt wird, benutze das Tool „hello-webhook aufrufen\" mit dem Namen. Antworte freundlich und kurz auf Deutsch."
+          "systemMessage": "Du bist ein hilfreicher Assistent für ein Hackathon-Team. Wenn der User möchte, dass jemand begrüßt wird, benutze das Tool „hello_webhook_aufrufen\" mit dem Namen. Antworte freundlich und kurz auf Deutsch."
         }
       },
       "id": "ec100000-0000-4000-8000-0000000000b2",
@@ -139,7 +139,7 @@
         }
       },
       "id": "ec100000-0000-4000-8000-0000000000b5",
-      "name": "hello-webhook aufrufen",
+      "name": "hello_webhook_aufrufen",
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [560, 280]
@@ -155,7 +155,7 @@
     "Gedächtnis (Memory)": {
       "ai_memory": [[{ "node": "KI-Agent", "type": "ai_memory", "index": 0 }]]
     },
-    "hello-webhook aufrufen": {
+    "hello_webhook_aufrufen": {
       "ai_tool": [[{ "node": "KI-Agent", "type": "ai_tool", "index": 0 }]]
     }
   },

@@ -123,7 +123,7 @@
     {
       "parameters": {},
       "id": "a1000000-0000-4000-8000-0000000000b5",
-      "name": "Rechner (Tool)",
+      "name": "Rechner",
       "type": "@n8n/n8n-nodes-langchain.toolCalculator",
       "typeVersion": 1,
       "position": [620, 280]
@@ -139,7 +139,7 @@
     "Gedächtnis (Memory)": {
       "ai_memory": [[{ "node": "KI-Agent", "type": "ai_memory", "index": 0 }]]
     },
-    "Rechner (Tool)": {
+    "Rechner": {
       "ai_tool": [[{ "node": "KI-Agent", "type": "ai_tool", "index": 0 }]]
     }
   },

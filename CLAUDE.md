@@ -64,6 +64,8 @@ Switch-Node: `case: 0`, `case: 1`, …
 ### AI-Workflow-Connections
 Für LangChain/AI-Nodes `sourceOutput` nutzen: `ai_languageModel`, `ai_tool`, `ai_memory`, `ai_embedding`, `ai_vectorStore`, `ai_outputParser`, `ai_document`, `ai_textSplitter`.
 
+⚠️ **AI-Tool-Node-Namen:** Der Name eines als Tool verbundenen Nodes (`ai_tool`) wird zum **Funktionsnamen fürs LLM** — daher **nur Buchstaben, Ziffern und Unterstriche** (kein Leerzeichen/Bindestrich/Klammer/Umlaut, nicht mit Ziffer beginnen). Beispiel: `hello_webhook_aufrufen`, nicht „hello-webhook aufrufen".
+
 ## Best Practices
 
 ### Do
