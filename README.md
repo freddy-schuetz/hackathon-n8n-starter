@@ -118,9 +118,19 @@ Du willst eine eigene Oberfläche? Die Skills **`frontend-build`** + **`frontend
 
 Sag z.B. *„bau mir ein Dashboard, das die Ergebnisse aus meinem n8n-Workflow anzeigt"* — Claude scaffoldet es nach diesen Konventionen.
 
-Lauffähige **Seeds** zum Draufaufbauen (bewusst minimal gehalten):
-- **`frontend-starter/`** — minimales Beispiel: Formular → n8n-Webhook + optionaler KI-Chat (braucht `ANTHROPIC_API_KEY`). **Ansehen: sag einfach „starte mein Frontend" — Claude übernimmt Installation + Dev-Server und gibt dir die `http://localhost:3000`-URL** (du tippst nichts).
-- **`backend-example/`** — FastAPI-Service (`/health` + Beispiel-Endpoint), falls n8n für schwere Rechen-/DB-/Geo-Logik nicht reicht. Start: siehe `backend-example/README.md`.
+### 👀 So siehst du deine App
+Sag einfach **„starte mein Frontend"**. Claude installiert alles und startet den Server **auf deinem Rechner** — du bekommst einen Link wie **`http://localhost:3000`**, klickst drauf und **siehst deine App im Browser**. Du musst **nichts** tippen oder selbst installieren.
+
+> `localhost` heißt: läuft **lokal auf deinem Laptop** — perfekt zum Bauen, Testen und für eine Demo am eigenen Bildschirm. (Dein n8n-Backend ist ja schon in der Cloud, deshalb funktioniert die ganze App so bereits komplett.)
+
+### 🌍 Willst du es online teilen? → „Vercel"
+Solange du nur lokal startest, läuft deine App **nur auf deinem Laptop** — andere können sie nicht öffnen. Möchtest du eine **öffentliche Internet-Adresse**, die jeder aufrufen kann (z.B. für die Abschluss-Präsentation), bringst du das Frontend zu **[Vercel](https://vercel.com)**.
+
+**Was ist Vercel?** Ein **kostenloser Hosting-Dienst für Web-Apps**. Du gibst ihm dein Frontend, und es macht daraus eine echte **URL im Internet** (z.B. `https://mein-projekt.vercel.app`). Dein **n8n-Backend bleibt unverändert** (das ist schon in der n8n-Cloud). Sag **„stell mein Frontend online"** — Claude führt dich durch die Schritte.
+
+### Die Seeds zum Draufaufbauen
+- **`frontend-starter/`** — minimales Beispiel: Formular → n8n-Webhook + optionaler KI-Chat.
+- **`backend-example/`** — FastAPI-Service (`/health` + Beispiel-Endpoint), falls n8n für schwere Rechen-/DB-/Geo-Logik nicht reicht.
 
 ---
 
