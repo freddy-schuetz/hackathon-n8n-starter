@@ -37,9 +37,12 @@ Ziel: n8n-Automatisierungs-Workflows bauen — mit deinem Agent + dem **n8n-mcp*
 - Das **tiefe n8n-Wissen liefert der n8n-mcp-Server selbst**: starte mit **`tools_documentation()`**, dann `search_nodes` / `get_node` / `search_templates` / `validate_workflow`.
 - Importierbare **Lern-Workflows** (mit Sticky-Notes-Erklärungen) in `examples/workflows/`: Grundlagen, KI-Agent, Agent-mit-Tool→Webhook, Agent→Data Table, Mini-Webhook (`hello-webhook`).
 - **Frontend/Backend** (optional): lauffähige Beispiele in `frontend-starter/` (Next.js 16, n8n-Webhook + KI-Chat) und `backend-example/` (FastAPI) — Details in deren README. Datenbank-Wahl: `docs/datenbank.md`.
-- Hinweis: Die kuratierten Claude-Code-Skills unter `.claude/skills/` werden von Codex/OpenCode **nicht** geladen — die wichtigsten Regeln stehen unten, der Rest kommt über n8n-mcp.
+- **Ideen-Menü** (für Teilnehmer ohne konkrete Idee): `docs/ideen.md` — branchenübergreifende Automatisierungs-Ideen zum Stöbern.
+- Hinweis zu den Skills unter `.claude/skills/`: **OpenCode lädt Claude-Code-Skills nativ** (damit stehen dir dort auch `idee-klaeren` und `grill-me` direkt zur Verfügung). **Codex u.a. laden sie nicht** — deshalb stehen die wichtigsten Regeln hier inline, der Rest kommt über n8n-mcp.
 
 ## Standard-Prozess (immer einhalten)
+
+**Vorab — Idee klären (bei Unsicherheit):** Ist die Idee des Users vage oder schwer beschreibbar → **erst** ein kurzes, freundliches Klärungs-Interview (EINE Frage nach der anderen, Alltagssprache statt Fachjargon): Ziel/Nutzen · Auslöser · Eingaben/Daten · Schritte · beteiligte Werkzeuge · Ergebnis · Oberfläche nötig (Frontend ja/nein)? Das Ergebnis als **Prozess-Steckbrief** in `mein-use-case.md` speichern und bestätigen lassen — **dann** bauen. Zum Stöbern: `docs/ideen.md`. (Hat der User dagegen einen **fertigen Plan** und bittet ausdrücklich um einen Härtetest — „grill mich" —, gehe ihn unerbittlich Frage für Frage durch, bevor gebaut wird.)
 
 1. `tools_documentation()` 2. **`search_templates()` (Template-First!)** 3. sonst `search_nodes` → `get_node` → `n8n_create_workflow` 4. `n8n_update_partial_workflow` 5. `n8n_validate_workflow` → `n8n_autofix_workflow` 6. **In deiner Instanz TESTEN** (fängt Laufzeitfehler, die der statische Validator nicht sieht!) 7. mit **Sticky Notes** dokumentieren 8. Security prüfen 9. aktivieren 10. bei fertigem/abzugebendem Workflow einen kurzen **Prüfbericht** erstellen (Tests, Validierung, Security-Status).
 
