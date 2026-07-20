@@ -4,8 +4,6 @@ Diese Datei richtet sich an Coding-Agents, die **AGENTS.md** lesen (OpenAI **Cod
 
 > **Du nutzt Claude Code?** Dann brauchst du das hier nicht — nimm **[README.md](README.md)** + **CLAUDE.md** (mit kuratierten Skills + „richte mir das ein"-Setup).
 
-Ziel: n8n-Automatisierungs-Workflows bauen — mit deinem Agent + dem **n8n-mcp**-Server.
-
 ## Setup (einmalig)
 
 1. **n8n-Zugang holen:** kostenlose n8n-Cloud-Trial auf [n8n.io](https://n8n.io) starten → Instanz-URL notieren → **Settings → n8n API → API-Key** erstellen.
@@ -32,33 +30,14 @@ Ziel: n8n-Automatisierungs-Workflows bauen — mit deinem Agent + dem **n8n-mcp*
 3. **Verbindung testen:** Agent bitten, `n8n_health_check` aufzurufen → muss OK liefern.
 4. ⚠️ **Keys niemals committen** — die echten Configs (`.codex/config.toml`, `opencode.json`) sind in `.gitignore`.
 
+## Arbeitsregeln: CLAUDE.md ist die einzige Quelle
+
+**Lies [CLAUDE.md](CLAUDE.md) und befolge sie 1:1.** Dort stehen die Arbeitsweise (inkl. Idee-Klärung bei vagen Ideen), der Standard-Prozess, alle kritischen n8n-Konventionen, Best Practices und Sicherheitsregeln. Diese Datei hier ergänzt nur das agent-spezifische Setup — sie wiederholt die Regeln bewusst **nicht** (sonst laufen die Versionen auseinander).
+
+**Skills-Übersetzung:** Wo CLAUDE.md von „Skills" spricht, sind Markdown-Ordner unter `.claude/skills/<name>/SKILL.md` gemeint. **OpenCode lädt Claude-Code-Skills nativ** — dort stehen sie dir direkt zur Verfügung. Lädt dein Agent sie nicht automatisch (z.B. Codex): lies die jeweilige `SKILL.md` einfach als Anleitung, sobald die Situation passt (z.B. `idee-klaeren` bei vager Idee, `n8n-testdaten` nach dem Bauen, `n8n-dokumentation` für Sticky Notes, `n8n-security-audit` vor der Aktivierung, `n8n-pruefbericht` am Ende).
+
 ## Wissen & Beispiele
 
-- Das **tiefe n8n-Wissen liefert der n8n-mcp-Server selbst**: starte mit **`tools_documentation()`**, dann `search_nodes` / `get_node` / `search_templates` / `validate_workflow`.
-- Importierbare **Lern-Workflows** (mit Sticky-Notes-Erklärungen) in `examples/workflows/`: Grundlagen, KI-Agent, Agent-mit-Tool→Webhook, Agent→Data Table, Mini-Webhook (`hello-webhook`).
-- **Frontend/Backend** (optional): lauffähige Beispiele in `frontend-starter/` (Next.js 16, n8n-Webhook + KI-Chat) und `backend-example/` (FastAPI) — Details in deren README. Datenbank-Wahl: `docs/datenbank.md`.
-- **Ideen-Menü** (für Teilnehmer ohne konkrete Idee): `docs/ideen.md` — branchenübergreifende Automatisierungs-Ideen zum Stöbern.
-- Hinweis zu den Skills unter `.claude/skills/`: **OpenCode lädt Claude-Code-Skills nativ** (damit stehen dir dort auch `idee-klaeren` und `grill-me` direkt zur Verfügung). **Codex u.a. laden sie nicht** — deshalb stehen die wichtigsten Regeln hier inline, der Rest kommt über n8n-mcp.
-
-## Standard-Prozess (immer einhalten)
-
-**Vorab — Idee klären (bei Unsicherheit):** Ist die Idee des Users vage oder schwer beschreibbar → **erst** ein kurzes, freundliches Klärungs-Interview (EINE Frage nach der anderen, Alltagssprache statt Fachjargon): Ziel/Nutzen · Auslöser · Eingaben/Daten · Schritte · beteiligte Werkzeuge · Ergebnis · Oberfläche nötig (Frontend ja/nein)? Das Ergebnis als **Prozess-Steckbrief** in `mein-use-case.md` speichern und bestätigen lassen — **dann** bauen. Zum Stöbern: `docs/ideen.md`. (Hat der User dagegen einen **fertigen Plan** und bittet ausdrücklich um einen Härtetest — „grill mich" —, gehe ihn unerbittlich Frage für Frage durch, bevor gebaut wird.)
-
-1. `tools_documentation()` 2. **`search_templates()` (Template-First!)** 3. sonst `search_nodes` → `get_node` → `n8n_create_workflow` 4. `n8n_update_partial_workflow` 5. `n8n_validate_workflow` → `n8n_autofix_workflow` 6. **In deiner Instanz TESTEN** (fängt Laufzeitfehler, die der statische Validator nicht sieht!) 7. mit **Sticky Notes** dokumentieren 8. Security prüfen 9. aktivieren 10. bei fertigem/abzugebendem Workflow einen kurzen **Prüfbericht** erstellen (Tests, Validierung, Security-Status).
-
-## Kritische n8n-Konventionen
-
-- **nodeType-Format je Tool:** Search/Validate `nodes-base.*` · Workflow-Tools `n8n-nodes-base.*` · AI/LangChain `@n8n/n8n-nodes-langchain.*`
-- **Webhook-Daten unter `.body`:** `{{ $json.body.feld }}` (nicht `{{ $json.feld }}`).
-- **Expressions** mit `{{ }}`; in **Code-Nodes ohne** `{{ }}`. Node-Namen mit Leerzeichen: `{{ $node["HTTP Request"].json.x }}`.
-- **IF-Node:** zwei Outputs — `branch: "true"` / `branch: "false"` setzen, sonst landen beide am selben Ausgang.
-- **addConnection:** vier String-Parameter `source`, `target`, `sourcePort: "main"`, `targetPort: "main"`.
-- **AI-Connections:** Sub-Nodes per `ai_languageModel` / `ai_tool` / `ai_memory` an den Agent (nicht `main`).
-- **AI-Tool-Node-Namen:** nur Buchstaben/Ziffern/Unterstriche (kein Leerzeichen/Bindestrich/Umlaut, nicht mit Ziffer beginnen) — der Name wird zum LLM-Funktionsnamen.
-- **HTTP-Tool für Agents:** `n8n-nodes-base.httpRequestTool` (v4.x) + `$fromAI('feld','Beschreibung','string')` — **nicht** der Legacy `@n8n/n8n-nodes-langchain.toolHttpRequest` (v1.1). Fast jeder Standard-Node kann als Tool dienen.
-- **AI-Sub-Nodes haben kein „Execute":** Tool/Modell/Memory laufen nur, wenn der Agent sie aufruft → Workflow über den **Chat** starten, Sub-Node nicht einzeln „Test step".
-
-## Sicherheit
-
-- API-Keys nur via Credentials/Config — **nie** in Node-Parametern oder im Repo.
-- Vor Aktivierung: Validierung + Security-Check; keine personenbezogenen Daten in Node-Namen/Notes.
+- Tiefes n8n-Wissen liefert der **n8n-mcp-Server** selbst: starte mit `tools_documentation()`.
+- Importierbare **Lern-Workflows** (mit Sticky-Notes-Erklärungen): `examples/workflows/` · **Ideen-Menü** zum Stöbern: `docs/ideen.md` · Datenbank-Wahl: `docs/datenbank.md`.
+- **Frontend/Backend** (optional): lauffähige Beispiele in `frontend-starter/` (Next.js 16) und `backend-example/` (FastAPI) — Details in deren README.
