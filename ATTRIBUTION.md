@@ -38,8 +38,13 @@ copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 ```
 
+## grill-me (Skill)
+Der Skill `.claude/skills/grill-me/` ist **adaptiert** von
+[mattpocock/skills](https://github.com/mattpocock/skills) (`grilling` + `grill-me`),
+MIT-Lizenz, © Matt Pocock.
+
 ## Eigene Skills & Code
-Alle übrigen Skills (`n8n-dokumentation`, `n8n-testdaten`, `n8n-pruefbericht`,
+Alle übrigen Skills (`idee-klaeren`, `n8n-dokumentation`, `n8n-testdaten`, `n8n-pruefbericht`,
 `n8n-security-audit`, `frontend-build`, `frontend-scaffold`, `backend-fastapi`)
 sowie `frontend-starter/` und `backend-example/` stehen unter der MIT-Lizenz dieses
 Repos (siehe `LICENSE`).

@@ -7,6 +7,7 @@ Eine fertige Grundlage, um mit **Claude Code + n8n-mcp** Automatisierungs-Workfl
 
 ## Arbeitsweise (WICHTIG — so verhältst du dich)
 - **Zielgruppe sind Einsteiger.** Erkläre in **einfacher Sprache**, ohne unerklärten Fachjargon.
+- **Erst die Idee klären (bei Unsicherheit):** Ist der Teilnehmer unsicher, was/wie er bauen soll, beschreibt seine Idee vage/umständlich, oder es geht direkt nach dem Setup los → nutze **zuerst** den Skill `idee-klaeren` (freundliches Interview → **Prozess-Steckbrief**), **bevor** du baust. Biete es proaktiv an. (Hat jemand dagegen einen **fertigen Plan** und will ihn härtetesten lassen — „grill mich" — → Skill `grill-me`, aber **nur auf ausdrücklichen Wunsch**.)
 - **Sei proaktiv:** Führe den Standard-Prozess **selbstständig** durch — frag den User nicht für jeden Schritt um Erlaubnis.
 - **Nach jedem Workflow AUTOMATISCH (ohne Nachfrage):** validieren → mit **Testdaten testen** (Skill `n8n-testdaten`) → mit **Sticky Notes dokumentieren** (Skill `n8n-dokumentation`) → **Security-Check** (Skill `n8n-security-audit`). Ist der Workflow fertig, zusätzlich einen kurzen **Prüfbericht** (Skill `n8n-pruefbericht`).
 - **Silent Execution:** Werkzeuge ohne Zwischenkommentar ausführen, danach **kurz und verständlich** berichten, was gebaut/getestet/dokumentiert wurde.
@@ -98,5 +99,6 @@ Für LangChain/AI-Nodes `sourceOutput` nutzen: `ai_languageModel`, `ai_tool`, `a
 Meistens keine externe nötig. **n8n-Workflow** → **n8n Data Tables** (eingebaut, `n8n_manage_datatable`, 50 MB, in der Cloud-Trial). **Deployte App / Auth / Vektoren** → **Supabase Free**. **Nur lokal** → SQLite (nie auf Vercel-Serverless). Details: `docs/datenbank.md`.
 
 ## Geladene Skills
+**Am Anfang:** `idee-klaeren` — Idee/Prozess mit dem Teilnehmer klären → klarer Bau-Auftrag (Steckbrief); Ideen-Menü in `docs/ideen.md` · `grill-me` — Härtetest für einen **fertigen** Plan, **nur auf ausdrücklichen Wunsch** („grill mich").
 **n8n:** `n8n-mcp-tools-expert`, `n8n-workflow-patterns`, `n8n-node-configuration`, `n8n-expression-syntax`, `n8n-validation-expert`, `n8n-code-javascript`, `n8n-code-python` (von czlonkowski/n8n-skills) · `n8n-testdaten`, `n8n-dokumentation`, `n8n-security-audit`, `n8n-pruefbericht`
 **Frontend/Backend (optional):** `frontend-build`, `frontend-scaffold`, `backend-fastapi` — lauffähige Beispiele in `frontend-starter/` und `backend-example/`.

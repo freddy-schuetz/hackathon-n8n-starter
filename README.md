@@ -2,6 +2,8 @@
 
 Eine fertige Grundlage, um beim Hackathon mit **Claude Code** und **n8n** sofort loszulegen — auch ohne Vorerfahrung. Enthält vorkonfigurierte Skills, die n8n-MCP-Anbindung, einen modernen **Frontend-Stack** (Next.js 16 · React 19 · TypeScript · Tailwind CSS 4) und lauffähige Frontend-/Backend-Beispiele.
 
+> 🧭 **Noch keine Idee — oder Idee da, aber schwer zu beschreiben?** Kein Problem: sag **„Hilf mir, meine Idee zu klären"** — Claude stellt dir ein paar einfache Fragen und macht daraus einen fertigen Bau-Plan. Ideen zum Stöbern: **[docs/ideen.md](docs/ideen.md)**.
+
 ---
 
 ## ✨ Einrichten mit nur einem Satz
@@ -39,7 +41,7 @@ Claude erledigt den Rest (klonen, konfigurieren) und fragt dich nur nach deinem 
 5. **(Optional) Frontend-Deps**, falls eine UI gewünscht ist: `cd frontend-starter && npm install`.
 6. **User bitten, Claude Code neu zu laden/starten**, damit n8n-MCP + Skills aktiv werden.
 7. **Verbindung testen:** `n8n_health_check` → muss OK liefern.
-8. **Fertig melden** und ersten Workflow anbieten (Beispiele in `examples/workflows/`).
+8. **Fertig melden** und **die Idee-Klärung anbieten**: „Sollen wir gemeinsam schauen, was du bauen willst? Sag einfach ‚Hilf mir, meine Idee zu klären'." (Wer schon eine Idee hat, beschreibt sie direkt; zum Stöbern: `docs/ideen.md`, Lern-Beispiele in `examples/workflows/`.)
 
 ---
 
@@ -70,6 +72,10 @@ Ordner in Claude Code öffnen → der n8n-MCP-Server (`npx n8n-mcp`) und alle Sk
 ### Die Skills — das „Wissen", das Claude automatisch nutzt
 Skills sind Spickzettel, die Claude **von selbst** heranzieht, sobald sie zum Thema passen — du musst sie nicht aufrufen.
 
+**Am Anfang — deine Idee klären:**
+- `idee-klaeren` — macht aus einer vagen oder schwer beschreibbaren Idee einen klaren Bau-Plan (inkl. Ideen-Menü für „noch keine Idee").
+- `grill-me` — nur auf Zuruf („grill mich"): zerpflückt deinen **fertigen** Plan Frage für Frage, bevor du baust.
+
 **Workflows richtig bauen** (von [czlonkowski](https://github.com/czlonkowski/n8n-skills)):
 - `n8n-mcp-tools-expert` — wie man die n8n-Werkzeuge richtig bedient (Nodes suchen, Workflow anlegen, prüfen).
 - `n8n-workflow-patterns` — bewährte Baumuster: Webhook, API-Aufruf, Datenbank, KI-Agent, Zeitplan.
@@ -97,12 +103,13 @@ Skills sind Spickzettel, die Claude **von selbst** heranzieht, sobald sie zum Th
 | `frontend-starter/` | Lauffähige Web-App: Formular → n8n-Webhook (+ optionaler KI-Chat). |
 | `backend-example/` | Lauffähiges FastAPI-Backend (`/health` + Beispiel-Endpoint). |
 | `docs/datenbank.md` | Wann welche Datenbank (n8n Data Tables / Supabase / SQLite). |
+| `docs/ideen.md` | Ideen-Menü: konkrete Automatisierungs-Ideen zum Stöbern (branchenübergreifend). |
 
 ---
 
 ## 🧪 Dein erster Workflow
 
-Sag zu Claude einfach, was du brauchst — z.B.:
+**Noch unsicher, was/wie?** Sag zuerst **„Hilf mir, meine Idee zu klären"** — Claude führt dich durch ein paar einfache Fragen und macht daraus einen Bau-Plan. Oder wenn du schon weißt, was du willst, sag einfach direkt, was du brauchst — z.B.:
 > „Bau mir einen Workflow: Ein Webhook empfängt einen Namen und antwortet mit einer freundlichen Begrüßung."
 
 Claude baut den Workflow und **validiert, testet mit Beispieldaten, dokumentiert ihn mit Sticky Notes und macht einen Sicherheits-Check — automatisch**, ohne dass du danach extra darum bitten musst (so ist es in `CLAUDE.md` festgelegt). Berichtet wird am Ende verständlich, was gemacht wurde.
