@@ -2,6 +2,9 @@
 
 Eine fertige Grundlage, um beim Hackathon mit **Claude Code** und **n8n** sofort loszulegen — auch ohne Vorerfahrung. Enthält vorkonfigurierte Skills, die n8n-MCP-Anbindung, einen modernen **Frontend-Stack** (Next.js 16 · React 19 · TypeScript · Tailwind CSS 4) und lauffähige Frontend-/Backend-Beispiele.
 
+> 📄 **Zum ersten Mal hier? → [Schritt-für-Schritt-Anleitung als PDF](docs/Anleitung-ClaudeCode_n8n_Setup.pdf)**
+> Von der Installation über den n8n-Zugang bis zum ersten laufenden Workflow — in einfacher Sprache, ohne Vorkenntnisse. *(Auch als [druckfreundliche Version](docs/Anleitung-ClaudeCode_n8n_Setup-Druck.pdf).)*
+
 > 🧭 **Noch keine Idee — oder Idee da, aber schwer zu beschreiben?** Kein Problem: sag **„Hilf mir, meine Idee zu klären"** — Claude stellt dir ein paar einfache Fragen und macht daraus einen fertigen Bau-Plan. Ideen zum Stöbern: **[docs/ideen.md](docs/ideen.md)**.
 
 ---
