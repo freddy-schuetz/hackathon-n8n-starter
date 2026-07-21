@@ -14,7 +14,11 @@ Eine fertige Grundlage, um beim Hackathon mit **Claude Code** und **n8n** sofort
 
 Claude erledigt den Rest (klonen, konfigurieren) und fragt dich nur nach deinem n8n-Zugang. Danach kannst du direkt Workflows bauen lassen.
 
-> Du brauchst nur **Claude Code Desktop** (eingeloggt mit deinem Claude-Account). **Node.js und git richtet Claude beim Setup automatisch ein** (per `winget`/`brew`) — du musst nichts vorinstallieren.
+> Du brauchst **Claude Code Desktop** ([Download](https://claude.com/download)) und einen **bezahlten Claude-Plan** (Pro, Max, Team oder Enterprise) — ohne den ist der **Code**-Bereich der App gesperrt.
+>
+> ⚠️ **Windows: Git vorher installieren.** Lokale Sessions starten **nur**, wenn Git schon vorhanden ist — Claude kann sich das also nicht selbst nachinstallieren. → **[Git für Windows herunterladen](https://git-scm.com/downloads/win)**, mit den Standard-Einstellungen installieren, danach **Claude einmal neu starten**. (Auf dem Mac ist Git meist schon dabei.)
+>
+> **Node.js** dagegen richtet Claude beim Setup bei Bedarf selbst ein (per `winget`/`brew`) — es wird für den n8n-MCP-Server gebraucht, nicht für Claude Code selbst.
 >
 > 🧩 **Du nutzt Codex, OpenCode o.ä. statt Claude Code?** → Setup-Anleitung in **[AGENTS.md](AGENTS.md)**.
 
@@ -33,6 +37,7 @@ Claude erledigt den Rest (klonen, konfigurieren) und fragt dich nur nach deinem 
      - **macOS:** `brew install git node` (kein Homebrew vorhanden? → von [nodejs.org](https://nodejs.org) bzw. [git-scm.com](https://git-scm.com))
      - **Linux:** Paketmanager, z.B. `sudo apt install -y git nodejs npm`
    - ⚠️ Windows zeigt evtl. eine **UAC-Abfrage** (vom User bestätigen lassen). Nach der Installation ist das Programm oft erst in einem **neuen** Terminal im PATH — falls `node`/`git` direkt danach „not found": den User bitten, Claude Code **einmal neu zu starten**, dann hier weiter.
+   - ℹ️ **Windows + Desktop-App:** Läuft diese Session lokal, ist Git zwangsläufig schon vorhanden (ohne Git startet dort gar keine lokale Session). Fehlt Git **vorher**, kann der User es nur selbst installieren → <https://git-scm.com/downloads/win>, danach App neu starten. In der Praxis bleibt hier meist nur **Node.js** nachzuinstallieren.
 2. **Klonen** und den Ordner als Projekt öffnen: `git clone https://github.com/freddy-schuetz/hackathon-n8n-starter`
 3. **MCP-Konfig anlegen:** `cp .mcp.json.example .mcp.json`
 4. **n8n-Zugang erfragen** und in `.mcp.json` eintragen (`N8N_API_URL`, `N8N_API_KEY`):
