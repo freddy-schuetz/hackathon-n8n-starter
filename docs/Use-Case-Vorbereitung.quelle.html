@@ -192,88 +192,59 @@
 <div class="sheet">
 <div class="hero">
   <span class="badge">HACKATHON-STARTER &middot; VORBEREITUNG</span>
-  <h1>Deinen Use Case finden &amp; mitbringen</h1>
-  <div class="sub">Kurze Vorbereitung vor dem Hackathon &mdash; 15 Minuten, die deinen Tag verdoppeln.</div>
+  <h1>Vor dem Hackathon &mdash; deine 10 Minuten</h1>
+  <div class="sub">Kein Technik-Wissen n&ouml;tig. &Uuml;berleg einfach: <strong>womit arbeitest du</strong> &mdash; und <strong>was nervt im Alltag?</strong></div>
   <div class="meta">Starter-Repo: <a href="https://github.com/freddy-schuetz/hackathon-n8n-starter">github.com/freddy-schuetz/hackathon-n8n-starter</a></div>
 </div>
 
-<p>Der beste Start in den Hackathon ist eine <strong>klare Idee</strong>. Nimm dir vorher kurz Zeit und geh diese Fragen durch &mdash; je konkreter du ankommst, desto mehr baust du am Tag. Perfekt muss nichts sein: Wir sortieren die Ideen vorab bzw. am ersten Tag gemeinsam.</p>
+<p><strong>Du musst dir keine &bdquo;Automatisierung&ldquo; ausdenken</strong> &mdash; und nichts Technisches k&ouml;nnen. Denk einfach an deinen Arbeitsalltag: <strong>was frisst Zeit, was nervt, was wiederholt sich?</strong> Was sich davon womit umsetzen l&auml;sst, finden wir <strong>gemeinsam vor Ort</strong> heraus &mdash; und oft ist deutlich mehr m&ouml;glich, als man denkt.</p>
 
-<h2 class="sec">1 &middot; Was macht einen guten Hackathon-Use-Case aus?</h2>
-<div class="crit">
-  <span>&#8635; wiederkehrend</span>
-  <span>&#9200; kostet Zeit / nervt</span>
-  <span>&#9986; klar abgrenzbar</span>
-  <span>&#10003; an 1 Tag machbar</span>
-</div>
-<p class="muted">Faustregel: <strong>ein Ausl&ouml;ser, ein klares Ergebnis.</strong> Lieber schmal und fertig als gro&szlig; und halb.</p>
-
-<h2 class="sec">2 &middot; Leitfragen &mdash; einfach notieren</h2>
+<h2 class="sec">Wor&uuml;ber du vorher kurz nachdenkst</h2>
+<p>Lass ein paar dieser Fragen auf dich wirken und notier, was dir einf&auml;llt &mdash; ganz frei, in eigenen Worten:</p>
 <ul>
-  <li>Was kostet dich oder dein Team <strong>regelm&auml;&szlig;ig Zeit</strong>? Was tippst/kopierst/beantwortest du <strong>immer wieder &auml;hnlich</strong>?</li>
-  <li>Welche <strong>Anfragen/Aufgaben</strong> wiederholen sich? <span class="muted">(Kundenanfragen, Termine, Bestellungen, Freigaben, Standard-Ausk&uuml;nfte &hellip;)</span></li>
-  <li>Wo entstehen <strong>Fehler oder Verz&ouml;gerungen</strong> durch Handarbeit? <span class="muted">(z.B. dieselbe Info an mehreren Stellen pflegen)</span></li>
-  <li>Was solltest du <strong>aktuell halten</strong>, vergisst es aber leicht? <span class="muted">(Preise, Angebote, Termine)</span></li>
-  <li>Formuliere 2&ndash;3 S&auml;tze <strong>&bdquo;Wenn X passiert &rarr; dann sollte automatisch Y&ldquo;</strong>:
-    <div class="box" style="margin-top:7px;">
-      <p style="margin:0;">Wenn eine <strong>Kundenanfrage per Mail</strong> kommt &rarr; freundlicher <strong>Antwort-Entwurf</strong>.<br>Wenn ein <strong>Formular</strong> abgeschickt wird &rarr; <strong>Eintrag in einer Tabelle</strong> + Benachrichtigung.</p>
-    </div>
-  </li>
+  <li>Was kostet dich oder dein Team <strong>regelm&auml;&szlig;ig Zeit</strong>?</li>
+  <li>Was tippst, kopierst oder beantwortest du <strong>immer wieder &auml;hnlich</strong>?</li>
+  <li>Was <strong>nervt</strong> im Alltag oder dauert l&auml;nger, als es sollte?</li>
+  <li>Welche Fragen oder Aufgaben wiederholen sich? <span class="muted">(Standard-Ausk&uuml;nfte, Termine, Bestellungen, Freigaben &hellip;)</span></li>
+  <li><strong>Womit arbeitest du</strong> jeden Tag? <span class="muted">(welche Programme &amp; Tools)</span></li>
+  <li>Was w&uuml;rdest du am liebsten <strong>loswerden</strong> oder einfacher haben?</li>
 </ul>
 
-<p class="muted">Noch gar keine Idee? Im Projekt gibt es ein <strong>Ideen-Men&uuml;</strong> zum St&ouml;bern: <code>docs/ideen.md</code>.</p>
+<div class="box">
+  <span class="t">Wichtig: kein Filter im Kopf</span>
+  <p><strong>Kein Plan, ob das &bdquo;geht&ldquo;?</strong> Macht nichts &mdash; bring es trotzdem mit. Ob und wie sich etwas umsetzen l&auml;sst, ist <strong>unser</strong> Job am Tag. Je ehrlicher deine Alltags-Themen, desto besser das Ergebnis. <span class="muted">Zum St&ouml;bern gibt es sp&auml;ter ein Ideen-Men&uuml; im Projekt (<code>docs/ideen.md</code>) &mdash; aber pflicht ist das nicht.</span></p>
 </div>
 
-<div class="sheet">
-<h2 class="sec">3 &middot; Wie &bdquo;denkt&ldquo; ein Automatisierungs-Workflow?</h2>
-<p>Fast jede Automatisierung hat drei Bausteine &mdash; in dieser Reihenfolge:</p>
-<table>
-  <tr><th>Baustein</th><th>Beispiele</th></tr>
-  <tr><td><strong>Ausl&ouml;ser</strong> &mdash; was startet es?</td><td>eine Mail kommt &middot; ein Formular wird abgeschickt &middot; eine Uhrzeit &middot; ein Knopfdruck &middot; eine neue Buchung</td></tr>
-  <tr><td><strong>Schritte</strong> &mdash; was passiert?</td><td>Infos pr&uuml;fen &middot; sortieren &middot; eine <strong>KI</strong> etwas schreiben/zusammenfassen/&uuml;bersetzen lassen &middot; in eine Tabelle schreiben</td></tr>
-  <tr><td><strong>Ergebnis</strong> &mdash; was kommt raus?</td><td>eine Antwort-Mail &middot; ein Tabellen-Eintrag &middot; eine Benachrichtigung &middot; ein Text-Entwurf &middot; eine kleine Web-Seite</td></tr>
-</table>
+<h2 class="sec">Was du mitbringst</h2>
 
-<div class="box ok">
-  <span class="t">&#10003; Das k&ouml;nnen KI &amp; Automatisierung gut</span>
-  <p>Texte verstehen &amp; entwerfen &middot; sortieren/kategorisieren &middot; &uuml;bersetzen &middot; zusammenfassen &middot; Daten in Tabellen schreiben &middot; Mails/Benachrichtigungen senden &middot; einfache Web-Formulare/Seiten &middot; Infos aus dem Web oder per API holen.</p>
-</div>
-<div class="box warn">
-  <span class="t">&#9888; Wo es (noch) hakt</span>
-  <p>100&nbsp;% Genauigkeit ohne Kontrolle &middot; Zugriff auf abgeschottete Alt-Systeme <em>ohne</em> Schnittstelle &middot; echte Rechtsverbindlichkeit/Unterschriften &middot; sehr gro&szlig;e Datenmengen in Echtzeit. <span class="muted">Solche F&auml;lle lassen sich oft <strong>zuschneiden</strong> &mdash; frag am Tag einfach nach.</span></p>
-</div>
-
-<h2 class="sec">4 &middot; Was du dir &uuml;berlegst &amp; mitbringst</h2>
-
-  <p><strong>Technisch (f&uuml;r den Start):</strong></p>
+  <p><strong>Technisch f&uuml;r den Start:</strong></p>
   <ul>
     <li><strong>Claude Code</strong> installieren (<a href="https://claude.com/download">claude.com/download</a>) &mdash; auf <strong>Windows</strong> zus&auml;tzlich <strong>Git</strong> (<a href="https://git-scm.com/downloads/win">git-scm.com/downloads/win</a>). Schritt f&uuml;r Schritt: die Setup-Anleitung im Repo.</li>
     <li>eine kostenlose <strong>n8n-Cloud-Trial</strong> (<a href="https://n8n.io">n8n.io</a>) + API-Key,</li>
     <li>Zugang zu den <strong>Tools</strong>, die du anbinden willst.</li>
   </ul>
-  <p><strong>Inhaltlich &mdash; die eigentliche Vorarbeit:</strong></p>
-  <ul>
-    <li>deinen <strong>ausgef&uuml;llten Steckbrief</strong> (n&auml;chste Seite),</li>
-    <li>eine Liste der <strong>beteiligten Tools/Systeme</strong> + ob eine <strong>Schnittstelle/API</strong> oder ein Zugang existiert,</li>
-    <li><strong>anonymisierte Beispieldaten</strong>, mit denen der Ablauf realistisch wird.</li>
-  </ul>
+<p>Und bring deinen <strong>kurzen Steckbrief</strong> von der n&auml;chsten Seite mit &mdash; vor allem die Liste, <strong>womit du arbeitest</strong>.</p>
 </div>
 
 <div class="sheet">
-<h2 class="sec">5 &middot; Dein Use-Case-Steckbrief &mdash; ausf&uuml;llen &amp; mitbringen</h2>
-<p class="muted">Ausdrucken und per Hand ausf&uuml;llen oder digital notieren. <strong>Offene Felder sind v&ouml;llig ok</strong> &mdash; am ersten Tag sch&auml;rfen wir das gemeinsam (in Claude: &bdquo;Hilf mir, meine Idee zu kl&auml;ren&ldquo;).</p>
+<h2 class="sec">Kurzer Steckbrief &mdash; ausf&uuml;llen &amp; mitbringen</h2>
+<p class="muted">Ausdrucken und per Hand ausf&uuml;llen oder digital notieren. <strong>Offene Felder sind v&ouml;llig ok</strong> &mdash; das ist keine Pr&uuml;fung. Den Rest besprechen wir am ersten Tag gemeinsam.</p>
 <div class="form">
-  <div class="field"><span class="q">Titel des Use&nbsp;Case</span><div class="line"></div></div>
-  <div class="field"><span class="q">Ziel / Nutzen <span class="hint">&mdash; was wird leichter, schneller, besser?</span></span><div class="line"></div></div>
-  <div class="field"><span class="q">Ausl&ouml;ser <span class="hint">&mdash; wann/wodurch startet es? (Mail &middot; Formular &middot; Uhrzeit &middot; Knopfdruck &middot; neue Buchung)</span></span><div class="line"></div></div>
-  <div class="field"><span class="q">Beteiligte Tools / Systeme <span class="hint">&mdash; E-Mail, Website, Sheets, Kalender, Buchungssystem &hellip;</span></span><div class="line"></div>
-    <div class="cbrow">Schnittstelle / API oder Zugang vorhanden?<span class="cb"></span>ja<span class="cb"></span>nein<span class="cb"></span>wei&szlig; nicht</div></div>
-  <div class="field"><span class="q">Eingaben / Daten <span class="hint">&mdash; welche Infos sind beteiligt?</span></span><div class="line"></div>
-    <div class="cbrow">Anonymisierte Beispieldaten mitgebracht?<span class="cb"></span>ja<span class="cb"></span>nein</div></div>
-  <div class="field"><span class="q">Schritte <span class="hint">&mdash; grob, in Alltagssprache</span></span><div class="line"></div><div class="line"></div></div>
-  <div class="field"><span class="q">Gew&uuml;nschtes Ergebnis <span class="hint">&mdash; was kommt am Ende raus?</span></span><div class="line"></div></div>
-  <div class="field"><span class="q">Oberfl&auml;che n&ouml;tig?</span>
-    <div class="cbrow"><span class="cb"></span>ja (Seite/Formular f&uuml;r Menschen)<span class="cb"></span>nein (l&auml;uft im Hintergrund)</div></div>
+  <div class="field"><span class="q">Name / Betrieb / Rolle <span class="hint">&mdash; optional</span></span><div class="line"></div></div>
+
+  <div class="field"><span class="q">Womit arbeitest du? &mdash; deine wichtigsten Tools &amp; Programme</span>
+    <div class="hint" style="margin:3px 0 2px;">z.B. E-Mail-Programm (Outlook/Gmail &hellip;), Website/CMS, Buchungs- oder Kassensystem, Excel/Google&nbsp;Sheets, Kalender, Social&nbsp;Media, Warenwirtschaft, Newsletter-Tool &hellip;</div>
+    <div class="line"></div><div class="line"></div><div class="line"></div></div>
+
+  <div class="field"><span class="q">Was kostet dich regelm&auml;&szlig;ig Zeit oder nervt? <span class="hint">&mdash; in deinen eigenen Worten</span></span>
+    <div class="line"></div><div class="line"></div></div>
+
+  <div class="field"><span class="q">Hast du schon eine Idee, was einfacher oder schneller sein sollte? <span class="hint">&mdash; optional, kein Muss</span></span>
+    <div class="line"></div><div class="line"></div></div>
+</div>
+
+<div class="box">
+  <p style="margin:0;"><strong>Am Hackathon:</strong> Aus deinen Stichworten machen wir gemeinsam etwas Konkretes &mdash; Claude hilft dir dabei mit dem Satz <em>&bdquo;Hilf mir, meine Idee zu kl&auml;ren&ldquo;</em>. Du musst also nichts fertig durchdacht haben.</p>
 </div>
 
 <div class="author">
